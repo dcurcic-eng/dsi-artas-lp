@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DSI Hair — ARTAS iXi Robotic FUE in Algonquin, Illinois</title>
+<meta name="description" content="Dermatologist-led ARTAS iXi robotic FUE at Dermatology Specialists of Illinois. Private consults with Dr. Vic Khanna in Algonquin, IL. 4.8/5 across 976 verified Google reviews." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Karla:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --color-cream:#F3F2EE;
+    --color-copper:#C28346;
+    --color-espresso:#251309;
+    --color-near-black:#161616;
+    --color-text-on-dark:#F3F2EE;
+    --color-text-on-dark-muted:#BFB6AC;
+    --color-hairline-dark:#2A2520;
+    --color-gold:#D9A77A;
+
+    --ease-out:cubic-bezier(.33,1,.68,1);
+    --ease-expo:cubic-bezier(.16,1,.3,1);
+    --ease-in-out:cubic-bezier(.65,0,.35,1);
+
+    --dur-micro:180ms;
+    --dur-short:320ms;
+    --dur-med:520ms;
+    --dur-long:900ms;
+
+    --f-serif:'Playfair Display', 'Times New Roman', serif;
+    --f-sans:'Karla', 'Helvetica Neue', sans-serif;
+    --f-nav:'Geist', 'Karla', sans-serif;
+
+    --site-pad:64px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:var(--f-sans);
+    background:var(--color-near-black);
+    color:var(--color-text-on-dark);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;border:0;background:none;color:inherit;cursor:pointer}
+
+  /* Layout */
+  .container{max-width:1440px;margin:0 auto;padding:0 var(--site-pad)}
+  section{padding:140px var(--site-pad)}
+  @media (max-width:900px){section{padding:80px 24px} :root{--site-pad:24px}}
+
+  /* Typography */
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--color-copper)}
+  .eyebrow.on-light{color:var(--color-near-black)}
+  h1,h2,h3,h4{font-family:var(--f-serif);font-weight:500;margin:0;line-height:1.05}
+  p{line-height:1.7;margin:0;color:var(--color-text-on-dark-muted)}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:20px 32px;
+    font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;
+    transition:background var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out), transform var(--dur-short) var(--ease-out);
+    will-change:transform, background-color;
+  }
+  .btn-primary{background:var(--color-copper);color:var(--color-near-black)}
+  .btn-primary:hover{background:#d5944f;transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--color-hairline-dark);color:var(--color-text-on-dark)}
+  .btn-ghost:hover{border-color:var(--color-copper);color:var(--color-copper);transform:translateY(-2px)}
+  .btn-outline-copper{border:1px solid var(--color-copper);color:var(--color-copper)}
+  .btn-outline-copper:hover{background:var(--color-copper);color:var(--color-near-black)}
+  .btn .arrow{display:inline-block;transition:transform var(--dur-short) var(--ease-out)}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  /* Reveal animations */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out)}
+  .reveal.in-view{opacity:1;transform:translateY(0)}
+  .reveal-stagger > *{opacity:0;transform:translateY(18px);transition:opacity var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out)}
+  .reveal-stagger.in-view > *{opacity:1;transform:translateY(0)}
+  .reveal-stagger.in-view > *:nth-child(1){transition-delay:0ms}
+  .reveal-stagger.in-view > *:nth-child(2){transition-delay:80ms}
+  .reveal-stagger.in-view > *:nth-child(3){transition-delay:160ms}
+  .reveal-stagger.in-view > *:nth-child(4){transition-delay:240ms}
+  .reveal-stagger.in-view > *:nth-child(5){transition-delay:320ms}
+  .reveal-stagger.in-view > *:nth-child(6){transition-delay:400ms}
+
+  /* Mask reveal for headings */
+  .mask-line{display:block;overflow:hidden}
+  .mask-line > span{display:block;transform:translateY(110%);transition:transform var(--dur-long) var(--ease-expo)}
+  .in-view .mask-line > span, .mask-line.in-view > span{transform:translateY(0)}
+  .mask-line:nth-child(2) > span{transition-delay:120ms}
+  .mask-line:nth-child(3) > span{transition-delay:240ms}
+
+  /* NAV */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px var(--site-pad);
+    transition:background var(--dur-med) var(--ease-out), backdrop-filter var(--dur-med) var(--ease-out), padding var(--dur-med) var(--ease-out);
+  }
+  .nav.scrolled{background:rgba(15,12,10,.82);backdrop-filter:blur(14px);padding:14px var(--site-pad)}
+  .nav-logo{display:flex;align-items:center;gap:14px}
+  .nav-logo img{height:44px;width:auto;filter:brightness(1.1)}
+  .nav-links{display:flex;gap:40px;font-family:var(--f-nav);font-size:13px;font-weight:500;letter-spacing:.3px}
+  .nav-links a{position:relative;padding:6px 0;transition:color var(--dur-micro) var(--ease-out)}
+  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--color-copper);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-short) var(--ease-out)}
+  .nav-links a:hover{color:var(--color-copper)}
+  .nav-links a:hover::after{transform:scaleX(1)}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .nav-phone{font-family:var(--f-sans);font-size:14px;font-weight:600}
+  .nav-btn{background:var(--color-copper);color:var(--color-near-black);padding:12px 22px;font-weight:700;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;transition:background var(--dur-micro)}
+  .nav-btn:hover{background:#d5944f}
+  @media(max-width:980px){.nav-links,.nav-phone{display:none}}
+
+  /* HERO */
+  .hero{
+    position:relative;height:900px;min-height:680px;
+    background:var(--color-near-black);
+    padding:180px var(--site-pad) 170px;
+    overflow:hidden;
+  }
+  .hero-video{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    object-fit:cover;
+    z-index:0;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(37,19,9,.9) 0%, rgba(37,19,9,.7) 40%, rgba(37,19,9,.95) 100%);
+    z-index:1;
+  }
+  .hero-body{position:relative;z-index:2;max-width:1312px;margin:0 auto;display:flex;justify-content:space-between;gap:80px;align-items:flex-start}
+  .hero-main{max-width:780px}
+  .hero-eye{display:flex;align-items:center;gap:12px;color:var(--color-copper);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:28px}
+  .hero-eye::before{content:"";width:44px;height:1px;background:var(--color-copper)}
+  .hero-headline{font-size:clamp(48px, 7vw, 88px);line-height:1;margin-bottom:32px}
+  .hero-sub{font-size:17px;line-height:1.65;max-width:600px;margin-bottom:36px}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-quote{max-width:320px;padding:28px 0 28px 28px;border-left:2px solid var(--color-copper);margin-bottom:100px}
+  .hero-quote p{font-family:var(--f-serif);color:var(--color-text-on-dark);font-size:19px;line-height:1.5;margin-bottom:16px}
+  .hero-quote cite{font-family:var(--f-sans);font-size:11px;font-weight:700;letter-spacing:2px;color:var(--color-copper);font-style:normal}
+
+  .hero-stats{
+    position:absolute;z-index:2;
+    bottom:60px;left:64px;right:64px;
+    background:rgba(37,19,9,.82);
+    backdrop-filter:blur(8px);
+    border:1px solid var(--color-hairline-dark);
+    height:110px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 48px;
+  }
+  .stat{display:flex;flex-direction:column;gap:6px;flex:1}
+  .stat-n{font-family:var(--f-serif);font-size:36px;font-weight:500;color:var(--color-copper)}
+  .stat-l{font-size:12px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--color-text-on-dark-muted)}
+  .stat-div{width:1px;height:64px;background:var(--color-hairline-dark)}
+  @media(max-width:980px){
+    .hero{height:auto;padding:180px 24px 60px}
+    .hero-body{flex-direction:column;align-items:stretch;height:auto;gap:40px}
+    .hero-main{padding-bottom:0}
+    /* Fully opaque card + centered layout so the shader behind can't bleed through */
+    .hero-stats{
+      position:relative;z-index:3;
+      top:auto;left:auto;right:auto;bottom:auto;
+      width:100%;max-width:100%;
+      height:auto;flex-wrap:wrap;gap:28px 16px;padding:32px 20px;margin:40px 0 0;
+      background:#1A0E05;
+      backdrop-filter:none;-webkit-backdrop-filter:none;
+      border:1px solid rgba(194,131,70,.4);
+      box-shadow:0 18px 40px rgba(0,0,0,.55);
+      justify-content:center;text-align:center;
+    }
+    .hero-stats .stat{align-items:center;flex:0 0 calc(50% - 12px);min-width:140px}
+    .hero-stats .stat-n{color:#E8B87E;font-size:30px}
+    .hero-stats .stat-l{color:#F3F2EE;font-weight:700;letter-spacing:1.2px}
+    .stat-div{display:none}
+  }
+
+  /* QUIZ */
+  .quiz{background:var(--color-near-black)}
+  .quiz-grid{display:grid;grid-template-columns:520px 1fr;gap:80px;align-items:stretch}
+  .quiz-headline{font-size:52px;line-height:1.05;margin:22px 0;color:var(--color-text-on-dark)}
+  .quiz-bullets{display:flex;flex-direction:column;gap:14px;padding-top:20px}
+  .quiz-bullet{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--color-text-on-dark)}
+  .quiz-bullet svg{width:18px;height:18px;color:var(--color-copper);flex-shrink:0}
+  .quiz-card{
+    background:var(--color-espresso);
+    border:1px solid var(--color-hairline-dark);
+    padding:48px;
+    display:flex;flex-direction:column;gap:32px;
+  }
+  .qz-hdr{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+  .qz-hdr .count{color:var(--color-copper)}
+  .qz-hdr .time{color:var(--color-text-on-dark-muted)}
+  .qz-prog{display:flex;gap:4px;height:3px}
+  .qz-prog span{flex:1;background:var(--color-hairline-dark)}
+  .qz-prog span.on{background:var(--color-copper)}
+  .qz-q{font-family:var(--f-serif);font-size:34px;font-weight:500;line-height:1.15;color:var(--color-text-on-dark)}
+  .qz-opts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .qz-opt{
+    background:var(--color-near-black);
+    border:1px solid var(--color-hairline-dark);
+    padding:24px;
+    display:flex;flex-direction:column;gap:12px;
+    cursor:pointer;
+    transition:border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
+  }
+  .qz-opt:hover{border-color:var(--color-copper);transform:translateY(-2px)}
+  .qz-opt.active{border-color:var(--color-copper);border-width:1.5px}
+  .qz-opt .nw{font-family:var(--f-serif);font-size:26px;color:var(--color-text-on-dark)}
+  .qz-opt.active .nw{color:var(--color-copper)}
+  .qz-opt .sub{font-size:13px;line-height:1.5;color:var(--color-text-on-dark-muted)}
+  .qz-foot{display:flex;justify-content:space-between;align-items:center;padding-top:16px}
+  .qz-back{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--color-text-on-dark-muted)}
+  @media(max-width:980px){
+    .quiz-grid{grid-template-columns:1fr;gap:40px}
+    .quiz-card{padding:32px 24px}
+    .qz-opts{grid-template-columns:repeat(2,1fr)}
+    .qz-q{font-size:26px}
+  }
+
+  /* PROCEDURE */
+  .procedure{background:var(--color-espresso)}
+  .proc-hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:80px;margin-bottom:80px}
+  .proc-hdr-l{max-width:760px}
+  .proc-head{font-size:clamp(36px,5vw,64px);line-height:1.05;color:var(--color-text-on-dark);margin-top:24px}
+  .proc-hdr-r{flex:1;padding-bottom:16px}
+  .proc-hdr-r p{font-size:16px;line-height:1.7}
+  .proc-steps{display:flex;flex-direction:column;border-top:1px solid var(--color-hairline-dark)}
+  .proc-step{display:flex;gap:48px;padding:36px 0;border-bottom:1px solid var(--color-hairline-dark);align-items:flex-start}
+  .proc-num{font-family:var(--f-serif);font-size:88px;color:var(--color-copper);line-height:1;flex-shrink:0;min-width:130px}
+  .proc-main{flex:1;padding-top:16px}
+  .proc-title{font-family:var(--f-serif);font-size:32px;color:var(--color-text-on-dark);margin-bottom:14px}
+  .proc-desc{font-size:15px;line-height:1.7;max-width:680px}
+  .proc-meta{width:180px;padding-top:16px;flex-shrink:0}
+  .proc-meta .t{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--color-copper);text-transform:uppercase;margin-bottom:6px}
+  .proc-meta .d{font-size:13px;color:var(--color-text-on-dark-muted)}
+  .proc-cta{display:inline-flex;margin-top:64px}
+  @media(max-width:980px){
+    .proc-hdr{flex-direction:column;gap:24px;align-items:flex-start}
+    .proc-step{flex-direction:column;gap:16px;padding:32px 0}
+    .proc-num{font-size:56px;min-width:auto}
+    .proc-title{font-size:24px}
+    .proc-meta{width:auto}
+  }
+
+  /* VIDEO */
+  .video-sec{background:var(--color-near-black);text-align:center}
+  .vid-hdr{max-width:920px;margin:0 auto 64px}
+  .vid-head{font-size:clamp(32px,4vw,52px);line-height:1.05;color:var(--color-text-on-dark);margin:20px 0}
+  .vid-sub{font-size:16px;line-height:1.6;margin:0 auto;max-width:620px}
+  .vid-wrap{
+    position:relative;max-width:1200px;margin:0 auto;
+    aspect-ratio:16 / 9;
+    background:#000;
+    border:1px solid var(--color-hairline-dark);
+    overflow:hidden;
+  }
+  .vid-wrap iframe,
+  .vid-wrap video{
+    position:absolute;inset:0;width:100%;height:100%;border:0;display:block;object-fit:cover;
+  }
+  .vid-cta-row{margin-top:64px}
+
+  /* REVIEWS */
+  .reviews{background:var(--color-espresso)}
+  .rev-hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:80px;margin-bottom:56px}
+  .rev-hdr-l{max-width:760px}
+  .rev-head{font-size:clamp(36px,5vw,64px);line-height:1.05;color:var(--color-text-on-dark);margin-top:22px}
+  .rev-hdr-r{max-width:420px}
+  .rev-stars{display:flex;gap:4px;margin-bottom:14px}
+  .rev-stars svg{width:22px;height:22px;color:var(--color-copper);fill:var(--color-copper)}
+  .rev-sub{font-size:15px;line-height:1.6}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .rev-card{
+    background:var(--color-near-black);
+    border:1px solid var(--color-hairline-dark);
+    padding:36px;
+    display:flex;flex-direction:column;gap:24px;
+    transition:transform var(--dur-med) var(--ease-out), border-color var(--dur-med) var(--ease-out);
+  }
+  .rev-card:hover{transform:translateY(-8px);border-color:var(--color-copper)}
+  .rev-h{display:flex;justify-content:space-between;align-items:center}
+  .rev-h .stars{display:flex;gap:2px;color:var(--color-copper)}
+  .rev-h .stars svg{width:14px;height:14px;fill:currentColor}
+  .rev-h .date{font-size:12px;color:var(--color-text-on-dark-muted)}
+  .rev-body{font-family:var(--f-serif);font-size:19px;line-height:1.55;color:var(--color-text-on-dark);font-weight:400}
+  .rev-foot{display:flex;align-items:center;gap:12px}
+  .rev-av{width:40px;height:40px;background:var(--color-copper);border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:var(--f-serif);font-weight:500;color:var(--color-near-black);font-size:16px;flex-shrink:0}
+  .rev-av.gold{background:var(--color-gold)}
+  .rev-who{display:flex;flex-direction:column;gap:2px}
+  .rev-who .nm{font-size:14px;font-weight:600;color:var(--color-text-on-dark)}
+  .rev-who .lo{font-size:12px;color:var(--color-text-on-dark-muted)}
+  @media(max-width:980px){
+    .rev-hdr{flex-direction:column;gap:24px;align-items:flex-start}
+    .rev-grid{grid-template-columns:1fr}
+  }
+
+  /* BEFORE / AFTER */
+  .ba{background:var(--color-near-black)}
+  .ba-hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:80px;margin-bottom:56px}
+  .ba-head{font-size:clamp(36px,4.5vw,58px);line-height:1.05;color:var(--color-text-on-dark);margin-top:22px}
+  .ba-feat{display:grid;grid-template-columns:1fr 1fr;gap:12px;height:520px;margin-bottom:16px}
+  .ba-feat-img{position:relative;overflow:hidden;background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#0b0b0b;transition:transform var(--dur-med) var(--ease-out);cursor:zoom-in}
+  .ba-feat-img:hover{transform:scale(1.01)}
+  .ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .ba-grid-img{aspect-ratio:4 / 3;background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#0b0b0b;position:relative;overflow:hidden;transition:transform var(--dur-med) var(--ease-out);cursor:zoom-in}
+  .ba-grid-img:hover{transform:scale(1.02)}
+  .ba-cta{display:flex;justify-content:center;padding-top:40px}
+
+  /* Lightbox */
+  .ba-lightbox{
+    position:fixed;inset:0;z-index:1000;
+    background:rgba(10,5,3,.92);
+    backdrop-filter:blur(10px);
+    display:flex;align-items:center;justify-content:center;
+    padding:48px;
+    opacity:0;pointer-events:none;
+    transition:opacity var(--dur-med) var(--ease-out);
+  }
+  .ba-lightbox.open{opacity:1;pointer-events:auto}
+  .ba-lightbox img{
+    max-width:100%;max-height:100%;
+    object-fit:contain;
+    box-shadow:0 30px 80px rgba(0,0,0,.7);
+    border:1px solid rgba(194,131,70,.25);
+  }
+  .ba-lightbox-close{
+    position:absolute;top:24px;right:24px;
+    width:48px;height:48px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(37,19,9,.8);
+    border:1px solid var(--color-hairline-dark);
+    color:var(--color-text-on-dark);
+    font-size:22px;
+    transition:background var(--dur-short), border-color var(--dur-short);
+    cursor:pointer;
+  }
+  .ba-lightbox-close:hover{background:var(--color-copper);color:var(--color-near-black);border-color:var(--color-copper)}
+  @media(max-width:980px){
+    .ba-lightbox{padding:16px}
+    .ba-lightbox-close{top:12px;right:12px;width:40px;height:40px}
+  }
+  @media(max-width:980px){
+    .ba-hdr{flex-direction:column;gap:24px;align-items:flex-start}
+    .ba-feat{grid-template-columns:1fr;height:auto}
+    .ba-feat-img{height:320px}
+    .ba-grid{grid-template-columns:repeat(2,1fr)}
+  }
+
+  /* COMPARE */
+  .compare{background:var(--color-copper);color:var(--color-near-black)}
+  .cmp-hdr{margin-bottom:56px}
+  .cmp-head{font-size:clamp(36px,4.5vw,54px);line-height:1.05;margin-top:22px;color:var(--color-near-black);max-width:760px}
+  .cmp-tbl{background:var(--color-near-black)}
+  .cmp-row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;padding:22px 28px;border-bottom:1px solid var(--color-hairline-dark);align-items:center}
+  .cmp-row.cmp-hdr-row{padding:24px 28px}
+  .cmp-row .c{font-size:15px}
+  .cmp-row.cmp-hdr-row .c{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+  .cmp-row.cmp-hdr-row .c1{color:transparent}
+  .cmp-row.cmp-hdr-row .c2{color:var(--color-copper);text-align:center}
+  .cmp-row.cmp-hdr-row .c3, .cmp-row.cmp-hdr-row .c4{color:var(--color-text-on-dark-muted);text-align:center}
+  .cmp-row .c1{color:var(--color-text-on-dark)}
+  .cmp-row .c2{color:var(--color-copper);font-weight:600;text-align:center}
+  .cmp-row .c3, .cmp-row .c4{color:var(--color-text-on-dark-muted);text-align:center}
+  .cmp-row:last-child{border-bottom:0}
+  .cmp-cta{display:inline-flex;margin-top:40px;background:var(--color-near-black);color:var(--color-copper)}
+  .cmp-cta:hover{background:#000}
+  @media(max-width:980px){
+    .cmp-row{grid-template-columns:1fr;gap:8px}
+    .cmp-row.cmp-hdr-row{display:none}
+    .cmp-row .c2::before{content:"DSI Hair: ";color:var(--color-text-on-dark-muted);font-weight:400}
+    .cmp-row .c3::before{content:"Typical FUE: "}
+    .cmp-row .c4::before{content:"Overseas: "}
+    .cmp-row .c2,.cmp-row .c3,.cmp-row .c4{text-align:left}
+  }
+
+  /* DOCTORS */
+  .doctors{background:var(--color-near-black)}
+  .doc-grid{display:grid;grid-template-columns:580px 1fr;gap:80px;align-items:start}
+  .doc-img{
+    position:relative;
+    height:720px;
+    background-image:url("images/team1.png");
+    background-size:cover;background-position:center;
+    overflow:hidden;
+  }
+  .doc-tag{
+    position:absolute;top:32px;left:32px;
+    background:rgba(37,19,9,.9);border-left:2px solid var(--color-copper);
+    padding:14px 20px;
+  }
+  .doc-tag .el{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--color-copper);text-transform:uppercase;margin-bottom:6px}
+  .doc-tag .nm{font-family:var(--f-serif);font-size:19px;line-height:1.35;color:var(--color-text-on-dark)}
+  .doc-head{font-size:clamp(36px,4.5vw,54px);line-height:1.05;color:var(--color-text-on-dark);margin:20px 0 0}
+  .doc-bio{font-size:16px;line-height:1.7;margin-top:20px}
+  .doc-creds{display:flex;flex-direction:column;gap:16px;margin-top:28px}
+  .doc-cred{padding:20px;border:1px solid var(--color-hairline-dark);display:flex;flex-direction:column;gap:10px;transition:border-color var(--dur-short) var(--ease-out)}
+  .doc-cred:hover{border-color:var(--color-copper)}
+  .doc-cred .t{font-size:10px;font-weight:700;letter-spacing:1.6px;color:var(--color-copper);text-transform:uppercase}
+  .doc-cred .v{font-size:13px;color:var(--color-text-on-dark);line-height:1.5}
+  .doc-support{display:flex;flex-direction:column;gap:16px;margin-top:32px}
+  .doc-s{display:flex;align-items:center;gap:12px}
+  .doc-s-av{width:48px;height:48px;background-size:cover;background-position:center;flex-shrink:0}
+  .doc-s-col{display:flex;flex-direction:column;gap:2px}
+  .doc-s-col .nm{font-size:14px;font-weight:600;color:var(--color-text-on-dark)}
+  .doc-s-col .rl{font-size:12px;color:var(--color-text-on-dark-muted)}
+  @media(max-width:980px){
+    .doc-grid{grid-template-columns:1fr;gap:40px}
+    .doc-img{height:460px}
+  }
+
+  /* FINANCING */
+  .financing{background:var(--color-espresso)}
+  .fin-top{display:flex;justify-content:space-between;align-items:flex-end;gap:80px;margin-bottom:56px}
+  .fin-head{font-size:clamp(32px,4vw,54px);line-height:1.05;color:var(--color-text-on-dark);margin-top:24px;max-width:700px}
+  .fin-top-r{flex:1;padding-bottom:20px}
+  .fin-top-r p{font-size:15px;line-height:1.7}
+  .fin-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .fin-card{padding:36px;display:flex;flex-direction:column;gap:18px;transition:transform var(--dur-med) var(--ease-out)}
+  .fin-card:hover{transform:translateY(-6px)}
+  .fin-card.dark{background:var(--color-near-black);border:1px solid var(--color-hairline-dark)}
+  .fin-card.copper{background:var(--color-copper);color:var(--color-near-black)}
+  .fin-card .lbl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+  .fin-card.dark .lbl{color:var(--color-copper)}
+  .fin-card.copper .lbl{color:var(--color-near-black)}
+  .fin-card .price{font-family:var(--f-serif);font-size:54px;font-weight:500;line-height:1}
+  .fin-card.dark .price{color:var(--color-text-on-dark)}
+  .fin-card.copper .price{color:var(--color-near-black)}
+  .fin-card .desc{font-size:13px;line-height:1.6}
+  .fin-card.dark .desc{color:var(--color-text-on-dark-muted)}
+  .fin-card.copper .desc{color:var(--color-espresso)}
+  .fin-bot{
+    display:flex;justify-content:space-between;align-items:center;
+    background:var(--color-near-black);border:1px solid var(--color-hairline-dark);
+    padding:32px 36px;margin-top:24px;
+  }
+  .fin-partners{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+  .fin-partners .lbl{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--color-text-on-dark-muted);text-transform:uppercase}
+  .fin-partners .ptn{font-family:var(--f-serif);font-size:22px;color:var(--color-text-on-dark)}
+  .fin-bot-btn{background:var(--color-copper);color:var(--color-near-black);padding:14px 24px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:background var(--dur-micro)}
+  .fin-bot-btn:hover{background:#d5944f}
+  @media(max-width:980px){
+    .fin-top{flex-direction:column;gap:24px;align-items:flex-start}
+    .fin-row{grid-template-columns:1fr}
+    .fin-bot{flex-direction:column;gap:24px;align-items:flex-start;padding:24px}
+  }
+
+  /* FAQ */
+  .faq{background:var(--color-near-black)}
+  .faq-hdr{text-align:center;max-width:760px;margin:0 auto 64px}
+  .faq-head{font-size:clamp(36px,4vw,52px);line-height:1.05;color:var(--color-text-on-dark);margin-top:20px}
+  .faq-list{max-width:980px;margin:0 auto;border-top:1px solid var(--color-hairline-dark)}
+  .faq-item{border-bottom:1px solid var(--color-hairline-dark);padding:0}
+  .faq-q{
+    width:100%;padding:32px 0;display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--f-serif);font-size:24px;color:var(--color-text-on-dark);text-align:left;
+    transition:color var(--dur-short) var(--ease-out);
+  }
+  .faq-q:hover{color:var(--color-copper)}
+  .faq-q .icon{width:22px;height:22px;color:var(--color-copper);transition:transform var(--dur-short) var(--ease-out);flex-shrink:0}
+  .faq-item.open .faq-q .icon{transform:rotate(45deg)}
+  .faq-a{
+    max-height:0;overflow:hidden;
+    transition:max-height var(--dur-med) var(--ease-in-out), padding var(--dur-med) var(--ease-in-out);
+  }
+  .faq-item.open .faq-a{max-height:400px;padding:0 0 32px}
+  .faq-a p{font-size:15px;line-height:1.7;color:var(--color-text-on-dark-muted);max-width:760px}
+  @media(max-width:980px){.faq-q{font-size:18px;padding:24px 0}}
+
+  /* CONTRACT */
+  .contract{display:grid;grid-template-columns:1fr 1fr;padding:0;background:var(--color-copper)}
+  .contract-l{background:var(--color-near-black);padding:140px 80px;display:flex;flex-direction:column;gap:28px}
+  .contract-l .eyebrow{color:var(--color-copper)}
+  .contract-l h2{font-size:clamp(40px,5vw,64px);line-height:1;color:var(--color-text-on-dark)}
+  .contract-l > p{font-size:16px;line-height:1.7;color:var(--color-text-on-dark-muted)}
+  .cf-steps{display:flex;flex-direction:column;gap:18px;padding-top:24px}
+  .cf-step{display:flex;gap:16px;align-items:flex-start}
+  .cf-step .n{font-family:var(--f-serif);font-size:24px;color:var(--color-copper);line-height:1;min-width:28px}
+  .cf-step .c{display:flex;flex-direction:column;gap:4px}
+  .cf-step .c .t{font-family:var(--f-serif);font-size:20px;color:var(--color-text-on-dark)}
+  .cf-step .c .d{font-size:13px;color:var(--color-text-on-dark-muted);line-height:1.6}
+  .contract-r{background:var(--color-copper);padding:140px 80px;display:flex;flex-direction:column;gap:20px}
+  .contract-r h3{font-family:var(--f-serif);font-size:32px;color:var(--color-near-black);margin-bottom:8px}
+  .cf-field{display:flex;flex-direction:column;gap:6px}
+  .cf-label{font-size:11px;font-weight:700;letter-spacing:1.4px;color:var(--color-near-black);text-transform:uppercase}
+  .cf-input, .cf-select, .cf-textarea{
+    background:rgba(243,242,238,.2);
+    border:1px solid transparent;
+    height:52px;padding:0 16px;
+    font-family:var(--f-sans);font-size:15px;color:var(--color-near-black);
+    transition:background var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+    width:100%;
+  }
+  .cf-input::placeholder, .cf-textarea::placeholder{color:rgba(37,19,9,.8)}
+  .cf-input:focus, .cf-select:focus, .cf-textarea:focus{outline:none;background:rgba(243,242,238,.35);border-color:var(--color-near-black)}
+  .cf-textarea{height:100px;padding:16px;resize:vertical;font-family:var(--f-sans)}
+  .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .cf-agree{display:flex;gap:12px;align-items:flex-start;padding:8px 0}
+  .cf-agree input[type=checkbox]{width:18px;height:18px;accent-color:var(--color-near-black);margin-top:2px}
+  .cf-agree label{font-size:13px;color:var(--color-near-black);line-height:1.5}
+  .cf-btn{
+    background:var(--color-near-black);color:var(--color-copper);
+    height:60px;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    transition:background var(--dur-short) var(--ease-out), letter-spacing var(--dur-short) var(--ease-out);
+  }
+  .cf-btn:hover{background:#000;letter-spacing:2.4px}
+  @media(max-width:980px){
+    .contract{grid-template-columns:1fr}
+    .contract-l, .contract-r{padding:80px 24px}
+  }
+
+  /* MAP */
+  .map-sec{
+    position:relative;padding:100px var(--site-pad);
+    background-image:url("images/lobby.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    overflow:hidden;
+  }
+  .map-sec::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(10,5,3,.78) 0%, rgba(10,5,3,.82) 100%);
+    z-index:1;
+  }
+  .map-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:460px 1fr;gap:32px;
+    max-width:1312px;margin:0 auto;
+    align-items:stretch;
+  }
+  .map-card{
+    background:rgba(22,22,22,.92);
+    backdrop-filter:blur(6px);
+    border:1px solid var(--color-copper);
+    padding:40px;
+    display:flex;flex-direction:column;gap:22px;
+  }
+  .map-card h2{font-size:40px;line-height:1.05;color:var(--color-text-on-dark)}
+  .map-card p{font-size:14px;line-height:1.6}
+  .map-rows{display:flex;flex-direction:column;gap:14px;padding-top:16px;border-top:1px solid var(--color-hairline-dark)}
+  .map-row{display:flex;align-items:flex-start;gap:12px}
+  .map-row svg{width:16px;height:16px;color:var(--color-copper);flex-shrink:0;margin-top:2px}
+  .map-row span{font-size:14px;color:var(--color-text-on-dark);line-height:1.5}
+  .map-btn{
+    background:var(--color-copper);color:var(--color-near-black);
+    height:52px;display:flex;align-items:center;justify-content:center;gap:10px;
+    font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    transition:background var(--dur-short);
+    margin-top:auto;
+  }
+  .map-btn:hover{background:#d5944f}
+  .map-frame{
+    position:relative;
+    min-height:520px;
+    border:1px solid var(--color-copper);
+    overflow:hidden;
+    background:var(--color-espresso);
+  }
+  .map-frame iframe{
+    width:100%;height:100%;min-height:520px;border:0;display:block;
+    filter:grayscale(20%) contrast(1.04);
+  }
+  @media(max-width:980px){
+    .map-sec{padding:60px 24px}
+    .map-grid{grid-template-columns:1fr;gap:20px}
+    .map-frame{min-height:360px}
+    .map-frame iframe{min-height:360px}
+  }
+
+  /* FOOTER */
+  .footer{background:var(--color-near-black);padding:100px var(--site-pad) 48px}
+  .ft-top{display:grid;grid-template-columns:380px 1fr 1fr 1fr;gap:80px;margin-bottom:56px}
+  .ft-brand{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+  .ft-brand-logo{
+    display:inline-block;
+    height:48px;width:auto;max-width:220px;
+    object-fit:contain;
+    filter:brightness(0) invert(1);
+    transition:filter var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+  }
+  .ft-brand-logo:hover{
+    filter:brightness(0) invert(1) drop-shadow(0 0 10px rgba(243,242,238,.75)) drop-shadow(0 0 22px rgba(194,131,70,.55));
+    transform:translateY(-1px);
+  }
+  .ft-brand p{font-size:14px;line-height:1.7}
+  .ft-soc{display:flex;gap:10px;padding-top:8px}
+  .ft-soc a{
+    width:42px;height:42px;background:var(--color-espresso);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--color-copper);
+    transition:background var(--dur-short), transform var(--dur-short);
+  }
+  .ft-soc a:hover{background:var(--color-copper);color:var(--color-near-black);transform:translateY(-2px)}
+  .ft-col .lbl{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--color-copper);text-transform:uppercase;margin-bottom:18px}
+  .ft-col .l1{font-size:14px;color:var(--color-text-on-dark);margin-bottom:6px;line-height:1.6}
+  .ft-col .l2{font-size:14px;color:var(--color-text-on-dark-muted);line-height:1.6}
+  .ft-bot{display:flex;justify-content:space-between;padding-top:32px;border-top:1px solid var(--color-hairline-dark)}
+  .ft-bot .c{font-size:12px;color:var(--color-text-on-dark-muted)}
+  .ft-links{display:flex;gap:28px}
+  .ft-links a{font-size:12px;color:var(--color-text-on-dark-muted);transition:color var(--dur-micro)}
+  .ft-links a:hover{color:var(--color-copper)}
+  @media(max-width:980px){
+    .ft-top{grid-template-columns:1fr;gap:40px;margin-bottom:40px}
+    .ft-bot{flex-direction:column;gap:16px}
+  }
+
+  /* Marquee */
+  .marquee{overflow:hidden;padding:24px 0;background:var(--color-espresso);border-top:1px solid var(--color-hairline-dark);border-bottom:1px solid var(--color-hairline-dark)}
+  .marquee-track{display:flex;gap:60px;white-space:nowrap;animation:marquee 34s linear infinite}
+  .marquee-item{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--color-text-on-dark-muted)}
+  .marquee-item svg{width:14px;height:14px;color:var(--color-copper);fill:var(--color-copper)}
+  @keyframes marquee{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}
+    .reveal, .reveal-stagger > *, .mask-line > span{opacity:1;transform:none}
+    .marquee-track{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <img src="images/logo.png" alt="DSI Hair" />
+  </div>
+  <div class="nav-links">
+    <a href="#procedure">The procedure</a>
+    <a href="#results">Results</a>
+    <a href="#doctors">Dr. Khanna</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#visit">Visit</a>
+  </div>
+  <div class="nav-right">
+    <a href="#contract" class="nav-btn">Book Consult</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/artas2.jpg">
+    <source src="images/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-body">
+    <div class="hero-main reveal">
+      <div class="hero-eye">ARTAS iXi  ·  Robotic FUE</div>
+      <h1 class="hero-headline">
+        <span class="mask-line"><span>Get Your Hair Back.</span></span>
+      </h1>
+      <p class="hero-sub">ARTAS iXi is the only FDA cleared robot that selects, scores, and harvests follicles on its own. Dr. Vic Khanna then places every graft by hand. No linear scar. No shaved head. Just a permanent, natural hairline.</p>
+      <div class="hero-ctas">
+        <a href="#contract" class="btn btn-primary">Book a private consult <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <aside class="reveal" style="max-width:320px">
+      <div class="hero-quote">
+        <p>"I chose ARTAS because it does what my hand cannot, and my hand does what a robot cannot."</p>
+        <cite>Dr. Vic Khanna, MD, FAAD</cite>
+      </div>
+    </aside>
+  </div>
+  <div class="hero-stats reveal-stagger">
+    <div class="stat"><span class="stat-n">25+</span><span class="stat-l">Years, Dr. Khanna</span></div>
+    <div class="stat-div"></div>
+    <div class="stat"><span class="stat-n">4.8 / 5</span><span class="stat-l">976 Google reviews</span></div>
+    <div class="stat-div"></div>
+    <div class="stat"><span class="stat-n">FDA</span><span class="stat-l">Cleared ARTAS iXi</span></div>
+    <div class="stat-div"></div>
+    <div class="stat"><span class="stat-n">5 to 7</span><span class="stat-l">Days to back at work</span></div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg> 4.8 on 976 Google reviews</div>
+    <div class="marquee-item">·</div>
+    <div class="marquee-item">Board-certified dermatologist</div>
+    <div class="marquee-item">·</div>
+    <div class="marquee-item">ARTAS iXi, FDA-cleared</div>
+    <div class="marquee-item">·</div>
+    <div class="marquee-item">No linear scar, ever</div>
+    <div class="marquee-item">·</div>
+    <div class="marquee-item">Clinical instructor, Northwestern</div>
+    <div class="marquee-item">·</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg> 4.8 on 976 Google reviews</div>
+    <div class="marquee-item">·</div>
+    <div class="marquee-item">Board-certified dermatologist</div>
+    <div class="marquee-item">·</div>
+    <div class="marquee-item">ARTAS iXi, FDA-cleared</div>
+    <div class="marquee-item">·</div>
+    <div class="marquee-item">No linear scar, ever</div>
+    <div class="marquee-item">·</div>
+    <div class="marquee-item">Clinical instructor, Northwestern</div>
+    <div class="marquee-item">·</div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<section class="quiz" id="quiz">
+  <div class="quiz-grid">
+    <div class="reveal">
+      <div class="eyebrow">Candidacy Quiz</div>
+      <h2 class="quiz-headline">
+        <span class="mask-line"><span>Find out if you are an</span></span>
+        <span class="mask-line"><span>ARTAS candidate in 60 seconds.</span></span>
+      </h2>
+      <p style="font-size:17px;line-height:1.7">Five short questions. No sign up required. You will receive a private, personalized assessment and a graft estimate within a few hours.</p>
+      <div class="quiz-bullets">
+        <div class="quiz-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Never shared with a third party</div>
+        <div class="quiz-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Reviewed personally by Dr. Khanna</div>
+        <div class="quiz-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> No obligation, no sales call</div>
+      </div>
+    </div>
+    <div class="quiz-card reveal">
+      <div class="qz-hdr">
+        <span class="count">Question <span id="qz-n">1</span> of 5</span>
+        <span class="time">60 seconds</span>
+      </div>
+      <div class="qz-prog" id="qz-prog">
+        <span class="on"></span><span></span><span></span><span></span><span></span>
+      </div>
+      <h3 class="qz-q" id="qz-q">Which Norwood pattern best matches your hairline today?</h3>
+      <div class="qz-opts" id="qz-opts">
+        <button class="qz-opt active" data-opt="NW II"><span class="nw">NW II</span><span class="sub">Slight temple recession</span></button>
+        <button class="qz-opt" data-opt="NW III"><span class="nw">NW III</span><span class="sub">Deep M shaped recession</span></button>
+        <button class="qz-opt" data-opt="NW IV"><span class="nw">NW IV</span><span class="sub">Recession plus crown thinning</span></button>
+        <button class="qz-opt" data-opt="NW V+"><span class="nw">NW V+</span><span class="sub">Large loss, bridge area thin</span></button>
+      </div>
+      <div class="qz-foot">
+        <button class="qz-back" id="qz-back"><span>←</span> Back</button>
+        <button class="btn btn-primary" id="qz-next">Continue <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDURE -->
+<section class="procedure" id="procedure">
+  <div class="proc-hdr">
+    <div class="proc-hdr-l reveal">
+      <div class="eyebrow">The Procedure</div>
+      <h2 class="proc-head">
+        <span class="mask-line"><span>A quiet, cinematic day.</span></span>
+        <span class="mask-line"><span>A lasting, natural result.</span></span>
+      </h2>
+    </div>
+    <div class="proc-hdr-r reveal">
+      <p>The ARTAS iXi performs the follicular harvest with a precision human hands cannot match. Dr. Khanna remains the artist, designing the hairline and placing every graft one at a time. The procedure is typically 4 to 8 hours in a private suite, with most patients back to work within a week.</p>
+    </div>
+  </div>
+  <div class="proc-steps">
+    <div class="proc-step reveal">
+      <div class="proc-num">01</div>
+      <div class="proc-main">
+        <div class="proc-title">Design</div>
+        <p class="proc-desc">Dr. Khanna maps a hairline specific to your face shape, hair direction, and facial maturity. A digital template is generated for the ARTAS robot.</p>
+      </div>
+      <div class="proc-meta">
+        <div class="t">~45 min</div>
+        <div class="d">Private consult room</div>
+      </div>
+    </div>
+    <div class="proc-step reveal">
+      <div class="proc-num">02</div>
+      <div class="proc-main">
+        <div class="proc-title">Robotic harvest</div>
+        <p class="proc-desc">ARTAS selects the healthiest follicles at 44 microns and extracts them with circular punches so small they leave tiny dot scars, never a line.</p>
+      </div>
+      <div class="proc-meta">
+        <div class="t">3 to 5 hours</div>
+        <div class="d">Local anesthesia</div>
+      </div>
+    </div>
+    <div class="proc-step reveal">
+      <div class="proc-num">03</div>
+      <div class="proc-main">
+        <div class="proc-title">Hand placement</div>
+        <p class="proc-desc">Dr. Khanna places each graft by hand, controlling angle, depth, and density so new hair grows in the same direction as the hair next to it.</p>
+      </div>
+      <div class="proc-meta">
+        <div class="t">2 to 4 hours</div>
+        <div class="d">Hand work, by Dr. Khanna</div>
+      </div>
+    </div>
+    <div class="proc-step reveal">
+      <div class="proc-num">04</div>
+      <div class="proc-main">
+        <div class="proc-title">Recovery</div>
+        <p class="proc-desc">You rest for two days, wash carefully on day three, and return to meetings by day five. Grafts secure in ten to fourteen days. Full density is visible at twelve months.</p>
+      </div>
+      <div class="proc-meta">
+        <div class="t">5 to 7 days</div>
+        <div class="d">Back to public life</div>
+      </div>
+    </div>
+  </div>
+  <a href="#contract" class="btn btn-primary proc-cta">Reserve your procedure day <span class="arrow">→</span></a>
+</section>
+
+<!-- VIDEO -->
+<section class="video-sec" id="video">
+  <div class="vid-hdr reveal">
+    <div class="eyebrow">Dr. Khanna, in his own words</div>
+    <h2 class="vid-head">
+      <span class="mask-line"><span>The ARTAS procedure,</span></span>
+      <span class="mask-line"><span>explained by the doctor.</span></span>
+    </h2>
+    <p class="vid-sub">Dr. Vic Khanna walks through how the ARTAS iXi robot selects and harvests follicles, how it compares to older hair transplant methods, the types of hair loss it treats, and what to expect at consultation.</p>
+  </div>
+  <div class="vid-wrap reveal" id="vid-trigger">
+    <video
+      src="images/video.mp4"
+      title="Dr. Vic Khanna on the ARTAS Robotic Hair Transplant"
+      controls
+      playsinline
+      preload="metadata">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="vid-cta-row">
+    <a href="#contract" class="btn btn-ghost">Schedule your consultation <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="results">
+  <div class="rev-hdr">
+    <div class="rev-hdr-l reveal">
+      <div class="eyebrow">Google Reviews</div>
+      <h2 class="rev-head">
+        <span class="mask-line"><span>4.8 out of 5.</span></span>
+        <span class="mask-line"><span>976 verified patients.</span></span>
+      </h2>
+    </div>
+    <div class="rev-hdr-r reveal">
+      <div class="rev-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg>
+      </div>
+      <p class="rev-sub">Every review is pulled directly from our verified Google Business profile at Dermatology Specialists of Illinois. No filters, no curation, no incentives. Hair transplant is mentioned in 21 of our reviews.</p>
+    </div>
+  </div>
+  <div class="rev-grid reveal-stagger">
+    <article class="rev-card">
+      <div class="rev-h">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+        </div>
+        <span class="date">2 months ago</span>
+      </div>
+      <p class="rev-body">"Dr. Khanna walked me through every risk before he ever quoted me. I had 2,100 grafts placed and by month nine no one at work could tell. The scarring is truly invisible."</p>
+      <div class="rev-foot">
+        <div class="rev-av">M</div>
+        <div class="rev-who"><span class="nm">Michael T.</span><span class="lo">Arlington Heights, IL</span></div>
+      </div>
+    </article>
+    <article class="rev-card">
+      <div class="rev-h">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+        </div>
+        <span class="date">4 months ago</span>
+      </div>
+      <p class="rev-body">"I spent two years researching. I picked DSI because Dr. Khanna said no to half the procedure I asked for. He wanted a result that looked honest at 50, not dense at 38. That is the right kind of doctor."</p>
+      <div class="rev-foot">
+        <div class="rev-av gold">R</div>
+        <div class="rev-who"><span class="nm">Raymond S.</span><span class="lo">Naperville, IL</span></div>
+      </div>
+    </article>
+    <article class="rev-card">
+      <div class="rev-h">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
+        </div>
+        <span class="date">6 weeks ago</span>
+      </div>
+      <p class="rev-body">"As a woman with female pattern thinning, I was nervous. Dr. Khanna and his team were kind, private, and experienced with our kind of case. I would not go anywhere else."</p>
+      <div class="rev-foot">
+        <div class="rev-av">J</div>
+        <div class="rev-who"><span class="nm">Jenna P.</span><span class="lo">Algonquin, IL</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba">
+  <div class="ba-hdr">
+    <div class="reveal">
+      <div class="eyebrow">Before &amp; After</div>
+      <h2 class="ba-head">
+        <span class="mask-line"><span>Real patients. Real timelines.</span></span>
+        <span class="mask-line"><span>No retouching.</span></span>
+      </h2>
+    </div>
+  </div>
+  <div class="ba-feat reveal">
+    <div class="ba-feat-img" data-src="images/ba1.jpg" style="background-image:url('images/ba1.jpg')" role="button" tabindex="0" aria-label="Open patient result full size"></div>
+    <div class="ba-feat-img" data-src="images/ba2.jpg" style="background-image:url('images/ba2.jpg')" role="button" tabindex="0" aria-label="Open patient result full size"></div>
+  </div>
+  <div class="ba-grid reveal-stagger">
+    <div class="ba-grid-img" data-src="images/ba3.jpg" style="background-image:url('images/ba3.jpg')" role="button" tabindex="0" aria-label="Open patient result full size"></div>
+    <div class="ba-grid-img" data-src="images/ba4.jpg" style="background-image:url('images/ba4.jpg')" role="button" tabindex="0" aria-label="Open patient result full size"></div>
+    <div class="ba-grid-img" data-src="images/ba5.jpg" style="background-image:url('images/ba5.jpg')" role="button" tabindex="0" aria-label="Open patient result full size"></div>
+    <div class="ba-grid-img" data-src="images/ba6.jpg" style="background-image:url('images/ba6.jpg')" role="button" tabindex="0" aria-label="Open patient result full size"></div>
+    <div class="ba-grid-img" data-src="images/ba7.jpg" style="background-image:url('images/ba7.jpg')" role="button" tabindex="0" aria-label="Open patient result full size"></div>
+    <div class="ba-grid-img" data-src="images/ba8.jpg" style="background-image:url('images/ba8.jpg')" role="button" tabindex="0" aria-label="Open patient result full size"></div>
+  </div>
+  <div class="ba-cta">
+    <a href="#contract" class="btn btn-outline-copper">Book your private consult <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare">
+  <div class="cmp-hdr reveal">
+    <div class="eyebrow on-light">Why DSI Hair</div>
+    <h2 class="cmp-head">
+      <span class="mask-line"><span>The difference you can see in</span></span>
+      <span class="mask-line"><span>the first visit.</span></span>
+    </h2>
+  </div>
+  <div class="cmp-tbl reveal">
+    <div class="cmp-row cmp-hdr-row">
+      <span class="c c1"></span>
+      <span class="c c2">DSI Hair</span>
+      <span class="c c3">Typical FUE Clinic</span>
+      <span class="c c4">Overseas Clinic</span>
+    </div>
+    <div class="cmp-row">
+      <span class="c c1">Harvest method</span>
+      <span class="c c2">ARTAS iXi robot</span>
+      <span class="c c3">Manual technician</span>
+      <span class="c c4">Tech on assembly line</span>
+    </div>
+    <div class="cmp-row">
+      <span class="c c1">Who places the grafts</span>
+      <span class="c c2">Dr. Khanna, MD</span>
+      <span class="c c3">Surgeon or tech</span>
+      <span class="c c4">Technicians</span>
+    </div>
+    <div class="cmp-row">
+      <span class="c c1">Scarring</span>
+      <span class="c c2">Tiny dots, invisible</span>
+      <span class="c c3">Varies by hand</span>
+      <span class="c c4">Often visible</span>
+    </div>
+    <div class="cmp-row">
+      <span class="c c1">Aftercare</span>
+      <span class="c c2">1, 3, 6, 12 month visits</span>
+      <span class="c c3">1 visit, a la carte</span>
+      <span class="c c4">Limited or none</span>
+    </div>
+    <div class="cmp-row">
+      <span class="c c1">Guarantee</span>
+      <span class="c c2">Every graft, growth backed</span>
+      <span class="c c3">Sometimes</span>
+      <span class="c c4">Rarely</span>
+    </div>
+  </div>
+  <a href="#contract" class="btn cmp-cta">Compare on your consult <span class="arrow">→</span></a>
+</section>
+
+<!-- DOCTORS -->
+<section class="doctors" id="doctors">
+  <div class="doc-grid">
+    <div class="doc-img reveal">
+      <div class="doc-tag">
+        <div class="el">Lead Physicians</div>
+        <div class="nm">Dr. Vic Khanna, MD, FAAD<br/>Dr. Lauren Boshnick, MD</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">The Team</div>
+      <h2 class="doc-head">
+        <span class="mask-line"><span>Dermatologists,</span></span>
+        <span class="mask-line"><span>not salesmen.</span></span>
+      </h2>
+      <p class="doc-bio">Dr. Vic Khanna and Dr. Lauren Boshnick lead the ARTAS robotic FUE program at DSI Hair. Dr. Khanna is a board-certified dermatologist and Clinical Instructor at Northwestern University with over a decade of experience on the iXi platform. Dr. Boshnick is a board-certified dermatologist who partners with Dr. Khanna on every case, evaluating candidacy, designing hairlines, and personally guiding patients from consultation through recovery.</p>
+      <div class="doc-creds">
+        <div class="doc-cred">
+          <span class="t">Board Certified</span>
+          <span class="v">American Board of Dermatology</span>
+        </div>
+        <div class="doc-cred">
+          <span class="t">Faculty</span>
+          <span class="v">Clinical Instructor, Northwestern University</span>
+        </div>
+        <div class="doc-cred">
+          <span class="t">Fellows</span>
+          <span class="v">American Academy of Dermatology</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING -->
+<section class="financing" id="pricing">
+  <div class="fin-top">
+    <div class="reveal">
+      <div class="eyebrow">Financing</div>
+      <h2 class="fin-head">
+        <span class="mask-line"><span>Transparent pricing.</span></span>
+        <span class="mask-line"><span>Predictable monthly payments.</span></span>
+      </h2>
+    </div>
+    <div class="fin-top-r reveal">
+      <p>Most DSI Hair patients require 1,500 to 4,000 grafts, with a typical case between $8,000 and $15,000. We publish our pricing structure, never pad it with hidden fees, and offer 0% APR financing for qualified applicants through CareCredit and Alphaeon.</p>
+    </div>
+  </div>
+  <div class="fin-row reveal-stagger">
+    <div class="fin-card dark">
+      <span class="lbl">Per Graft</span>
+      <span class="price">$5 to $8</span>
+      <span class="desc">Depending on session size and hairline complexity.</span>
+    </div>
+    <div class="fin-card copper">
+      <span class="lbl">Typical Case</span>
+      <span class="price">$8k to $15k</span>
+      <span class="desc">Quoted in writing after your consult. No surprises.</span>
+    </div>
+    <div class="fin-card dark">
+      <span class="lbl">Monthly From</span>
+      <span class="price">$199 / mo</span>
+      <span class="desc">0% APR available via CareCredit or Alphaeon.</span>
+    </div>
+  </div>
+  <div class="fin-bot reveal">
+    <div class="fin-partners">
+      <span class="lbl">Financing partners</span>
+      <span class="ptn">CareCredit</span>
+      <span class="ptn">Alphaeon</span>
+      <span class="ptn">United Medical Credit</span>
+    </div>
+    <a href="#contract" class="fin-bot-btn">Get your personal quote</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq-hdr reveal">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="faq-head">
+      <span class="mask-line"><span>Everything we are asked,</span></span>
+      <span class="mask-line"><span>answered here.</span></span>
+    </h2>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item open">
+      <button class="faq-q">How much does ARTAS at DSI Hair cost? <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg></button>
+      <div class="faq-a"><p>Typical cases run 1,500 to 4,000 grafts, with pricing per graft. Most DSI Hair cases fall between $8,000 and $15,000. You will receive a written quote at the end of your consult, before you decide.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How is ARTAS iXi different from manual FUE? <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg></button>
+      <div class="faq-a"><p>ARTAS iXi uses artificial intelligence to identify and harvest the strongest follicles with sub-millimeter precision, avoiding human fatigue and hand tremor over the course of thousands of grafts. Dr. Khanna keeps the creative work: the hairline design and the placement of every single graft.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Will I need to shave my head? <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg></button>
+      <div class="faq-a"><p>No. We trim only the harvest zone at the back of the head, which is completely covered by the surrounding hair. Most patients return to work within a week with no one noticing.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">When will I see the results? <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg></button>
+      <div class="faq-a"><p>New hairs begin to emerge around month three. Visible density arrives by month six. The final, full result is visible at twelve months and continues to refine through month eighteen.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is ARTAS appropriate for women? <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg></button>
+      <div class="faq-a"><p>Yes, for the right candidate. Women with stable donor areas and a well-defined pattern of thinning often do beautifully with ARTAS. Dr. Khanna evaluates each case personally and will tell you honestly if another approach would serve you better.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you guarantee the results? <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg></button>
+      <div class="faq-a"><p>We back every graft. If any transplanted follicle does not grow, we replace it at no additional cost. This is rare with ARTAS, but we stand behind our work.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTRACT / CONSULT -->
+<section class="contract" id="contract">
+  <div class="contract-l reveal">
+    <div class="eyebrow">Reserve your consult</div>
+    <h2>
+      <span class="mask-line"><span>Book in private.</span></span>
+      <span class="mask-line"><span>Confidentially.</span></span>
+    </h2>
+    <p>All consults are confidential. You will speak with Dr. Khanna directly. We offer evening and Saturday slots for working professionals.</p>
+    <div class="cf-steps">
+      <div class="cf-step"><span class="n">01</span><div class="c"><span class="t">Share your details</span><span class="d">A brief form. Nothing stored on third-party platforms.</span></div></div>
+      <div class="cf-step"><span class="n">02</span><div class="c"><span class="t">Pick a time that works</span><span class="d">In-person in Algonquin, or secure video consult.</span></div></div>
+      <div class="cf-step"><span class="n">03</span><div class="c"><span class="t">Meet Dr. Khanna</span><span class="d">Forty-five unhurried minutes. A written plan and estimate.</span></div></div>
+    </div>
+  </div>
+  <div class="contract-r reveal">
+    <h3>Your consult request</h3>
+    <form id="consult-form">
+      <div class="cf-row" style="margin-bottom:20px">
+        <div class="cf-field">
+          <label class="cf-label">First name</label>
+          <input class="cf-input" type="text" placeholder="Your first name" required />
+        </div>
+        <div class="cf-field">
+          <label class="cf-label">Last name</label>
+          <input class="cf-input" type="text" placeholder="Your last name" required />
+        </div>
+      </div>
+      <div class="cf-field" style="margin-bottom:20px">
+        <label class="cf-label">Email</label>
+        <input class="cf-input" type="email" placeholder="name@email.com" required />
+      </div>
+      <div class="cf-field" style="margin-bottom:20px">
+        <label class="cf-label">Phone</label>
+        <input class="cf-input" type="tel" placeholder="(###) ### ####" required />
+      </div>
+      <div class="cf-field" style="margin-bottom:20px">
+        <label class="cf-label">Timing</label>
+        <select class="cf-select">
+          <option>Within a month</option>
+          <option>1 to 3 months</option>
+          <option>3 to 6 months</option>
+          <option>Just researching</option>
+        </select>
+      </div>
+      <div class="cf-field" style="margin-bottom:20px">
+        <label class="cf-label">Notes for Dr. Khanna</label>
+        <textarea class="cf-textarea" placeholder="Anything we should know before we meet."></textarea>
+      </div>
+      <div class="cf-agree">
+        <input type="checkbox" id="agree" required />
+        <label for="agree">I agree to the privacy and HIPAA terms. I understand no sales call will be made.</label>
+      </div>
+      <button type="submit" class="cf-btn" style="margin-top:8px;width:100%">Request my consult →</button>
+    </form>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-sec" id="visit">
+  <div class="map-grid">
+    <div class="map-card reveal">
+      <div class="eyebrow">Visit DSI Hair</div>
+      <h2>Algonquin, Illinois</h2>
+      <p>A private, dermatologist led practice in Chicagoland. Free on site parking, discreet scheduling.</p>
+      <div class="map-rows">
+        <div class="map-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>2430 Esplanade Dr B, Algonquin, IL 60102</span>
+        </div>
+        <div class="map-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>(844) 307-7546</span>
+        </div>
+        <div class="map-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Mon–Fri, 8 AM to 6 PM · Saturday by appointment</span>
+        </div>
+      </div>
+      <a href="https://maps.app.goo.gl/qTQzz1T5NzuXTZZn9" target="_blank" rel="noopener" class="map-btn">Get directions <span>↗</span></a>
+    </div>
+    <div class="map-frame reveal">
+      <iframe
+        src="https://www.google.com/maps?q=2430+Esplanade+Dr+B,+Algonquin,+IL+60102&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+        title="DSI Hair clinic location, 2430 Esplanade Dr B, Algonquin, IL 60102">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="ba-lightbox" id="ba-lightbox" role="dialog" aria-modal="true" aria-label="Patient result">
+  <button class="ba-lightbox-close" id="ba-lightbox-close" aria-label="Close">✕</button>
+  <img id="ba-lightbox-img" alt="Patient result" />
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="ft-top">
+    <div class="ft-brand">
+      <img class="ft-brand-logo" src="images/logo.png" alt="DSI Hair" />
+      <p>A dermatologist led practice in Algonquin, Illinois. Specializing in ARTAS robotic FUE hair restoration.</p>
+      <div class="ft-soc">
+        <a href="https://www.instagram.com/dermspecialistsil" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.facebook.com/dermspecialistsil" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.youtube.com/@dsihairrestoration" target="_blank" rel="noopener" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <div class="lbl">Visit</div>
+      <div class="l1">2430 Esplanade Dr B</div>
+      <div class="l2">Algonquin, IL 60102</div>
+    </div>
+    <div class="ft-col">
+      <div class="lbl">Contact</div>
+      <div class="l1">(844) 307-7546</div>
+      <div class="l2">hello@dsihair.com</div>
+    </div>
+    <div class="ft-col">
+      <div class="lbl">Hours</div>
+      <div class="l1">Mon–Fri, 8 AM to 6 PM</div>
+      <div class="l2">Saturday, by appointment</div>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <div class="c">© 2026 DSI Hair · Dermatology Specialists of Illinois</div>
+    <div class="ft-links">
+      <a href="#">Privacy</a>
+      <a href="#">HIPAA</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  // --- Nav scroll state
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // --- IntersectionObserver reveals (scroll-triggered, only once)
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger, .mask-line');
+  if (reduced) {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          // cascade mask-lines inside a revealed block
+          entry.target.querySelectorAll && entry.target.querySelectorAll('.mask-line').forEach(ml => ml.classList.add('in-view'));
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  }
+
+  // --- FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const icon = q.querySelector('.icon');
+    const updateIcon = () => {
+      const open = item.classList.contains('open');
+      icon.innerHTML = open
+        ? '<line x1="5" y1="12" x2="19" y2="12"/>'
+        : '<line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/>';
+    };
+    updateIcon();
+    q.addEventListener('click', () => {
+      item.classList.toggle('open');
+      updateIcon();
+    });
+  });
+
+  // --- Quiz interactions
+  const qzQuestions = [
+    { q: 'Which Norwood pattern best matches your hairline today?',
+      opts: [
+        { label: 'NW II', sub: 'Slight temple recession' },
+        { label: 'NW III', sub: 'Deep M shaped recession' },
+        { label: 'NW IV', sub: 'Recession plus crown thinning' },
+        { label: 'NW V+', sub: 'Large loss, bridge area thin' },
+      ]},
+    { q: 'How long has the thinning been progressing?',
+      opts: [
+        { label: '< 2 yrs', sub: 'Recent onset' },
+        { label: '2–5 yrs', sub: 'Moderate timeline' },
+        { label: '5–10 yrs', sub: 'Mature pattern' },
+        { label: '10+ yrs', sub: 'Fully settled' },
+      ]},
+    { q: 'What is your donor density in the back and sides?',
+      opts: [
+        { label: 'Thick', sub: 'Plenty of supply' },
+        { label: 'Average', sub: 'Typical donor' },
+        { label: 'Thin', sub: 'Limited but workable' },
+        { label: 'Not sure', sub: 'We will assess' },
+      ]},
+    { q: 'Are you on any hair treatments now?',
+      opts: [
+        { label: 'Finasteride', sub: 'Oral DHT blocker' },
+        { label: 'Minoxidil', sub: 'Topical / oral' },
+        { label: 'Both', sub: 'Full stack' },
+        { label: 'None', sub: 'Starting fresh' },
+      ]},
+    { q: 'What is your goal?',
+      opts: [
+        { label: 'Restore hairline', sub: 'Front-forward look' },
+        { label: 'Fill the crown', sub: 'Vertex density' },
+        { label: 'Both', sub: 'Full coverage' },
+        { label: 'Consult first', sub: 'Not decided yet' },
+      ]},
+  ];
+  const qzOpts = document.getElementById('qz-opts');
+  const qzQ = document.getElementById('qz-q');
+  const qzN = document.getElementById('qz-n');
+  const qzProg = document.getElementById('qz-prog');
+  const qzNext = document.getElementById('qz-next');
+  const qzBack = document.getElementById('qz-back');
+  let qzIdx = 0;
+  const qzAnswers = new Array(qzQuestions.length).fill(null);
+
+  function renderQuiz() {
+    const cur = qzQuestions[qzIdx];
+    qzQ.textContent = cur.q;
+    qzN.textContent = qzIdx + 1;
+    qzProg.querySelectorAll('span').forEach((s, i) => s.classList.toggle('on', i <= qzIdx));
+    qzOpts.innerHTML = cur.opts.map((o, i) =>
+      `<button class="qz-opt${qzAnswers[qzIdx] === i ? ' active' : ''}" data-i="${i}">
+        <span class="nw">${o.label}</span><span class="sub">${o.sub}</span>
+      </button>`).join('');
+    qzOpts.querySelectorAll('.qz-opt').forEach(b => {
+      b.addEventListener('click', () => {
+        qzAnswers[qzIdx] = parseInt(b.dataset.i, 10);
+        qzOpts.querySelectorAll('.qz-opt').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+      });
+    });
+    qzNext.innerHTML = (qzIdx === qzQuestions.length - 1)
+      ? 'See my result <span class="arrow">→</span>'
+      : 'Continue <span class="arrow">→</span>';
+  }
+  qzNext.addEventListener('click', () => {
+    if (qzIdx < qzQuestions.length - 1) { qzIdx++; renderQuiz(); }
+    else {
+      qzOpts.innerHTML = '<div style="grid-column:1/-1;padding:32px 24px;text-align:center;border:1px solid var(--color-copper);background:rgba(194,131,70,.08)"><div class="eyebrow" style="margin-bottom:12px">Preliminary result</div><h4 style="font-family:var(--f-serif);font-size:28px;font-weight:500;color:var(--color-text-on-dark);line-height:1.3">You look like a good ARTAS candidate.</h4><p style="font-size:14px;color:var(--color-text-on-dark-muted);margin-top:12px">Dr. Khanna will review your answers personally and send a detailed assessment within a few hours.</p><a href="#contract" class="btn btn-primary" style="margin-top:18px">Finish my consult request <span class="arrow">→</span></a></div>';
+      qzQ.textContent = 'We have enough to say hello.';
+      qzNext.style.display = 'none';
+    }
+  });
+  qzBack.addEventListener('click', () => { if (qzIdx > 0) { qzIdx--; qzNext.style.display='inline-flex'; renderQuiz(); } });
+  renderQuiz();
+
+  // --- Before/After lightbox
+  const baLightbox = document.getElementById('ba-lightbox');
+  const baLightboxImg = document.getElementById('ba-lightbox-img');
+  const baLightboxClose = document.getElementById('ba-lightbox-close');
+  const openLightbox = (src) => {
+    baLightboxImg.src = src;
+    baLightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeLightbox = () => {
+    baLightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { baLightboxImg.src = ''; }, 300);
+  };
+  document.querySelectorAll('.ba-feat-img, .ba-grid-img').forEach(el => {
+    el.addEventListener('click', () => {
+      const src = el.dataset.src;
+      if (src) openLightbox(src);
+    });
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const src = el.dataset.src;
+        if (src) openLightbox(src);
+      }
+    });
+  });
+  baLightbox.addEventListener('click', (e) => {
+    if (e.target === baLightbox || e.target === baLightboxImg) closeLightbox();
+  });
+  baLightboxClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && baLightbox.classList.contains('open')) closeLightbox();
+  });
+
+  // --- Video section uses native HTML5 <video> element; no JS trigger needed.
+
+  // --- Form feedback
+  document.getElementById('consult-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('.cf-btn');
+    btn.textContent = '✓ Request received. Dr. Khanna will be in touch.';
+    btn.style.pointerEvents = 'none';
+  });
+
+  // --- Smooth anchor scroll with header offset (fallback if smooth-scroll not supported)
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id === '#' || id === '#top') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      const y = el.getBoundingClientRect().top + window.pageYOffset - 70;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
