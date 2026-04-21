@@ -57,7 +57,8 @@
   /* Typography */
   .eyebrow{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--color-copper)}
   .eyebrow.on-light{color:var(--color-near-black)}
-  h1,h2,h3,h4{font-family:var(--f-serif);font-weight:500;margin:0;line-height:1.05}
+  h1,h2,h3,h4{font-family:var(--f-serif);font-weight:500;margin:0;line-height:1.2}
+  .mask-line{padding-bottom:.08em}
   p{line-height:1.7;margin:0;color:var(--color-text-on-dark-muted)}
 
   /* Buttons */
@@ -106,7 +107,7 @@
   .nav.scrolled{background:rgba(15,12,10,.82);backdrop-filter:blur(14px);padding:14px var(--site-pad)}
   .nav-logo{display:flex;align-items:center;gap:14px}
   .nav-logo img{height:44px;width:auto;filter:brightness(1.1)}
-  .nav-links{display:flex;gap:40px;font-family:var(--f-nav);font-size:13px;font-weight:500;letter-spacing:.3px}
+  .nav-links{display:flex;gap:40px;font-family:var(--f-nav);font-size:16px;font-weight:500;letter-spacing:.3px}
   .nav-links a{position:relative;padding:6px 0;transition:color var(--dur-micro) var(--ease-out)}
   .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--color-copper);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-short) var(--ease-out)}
   .nav-links a:hover{color:var(--color-copper)}
@@ -139,7 +140,7 @@
   .hero-main{max-width:780px}
   .hero-eye{display:flex;align-items:center;gap:12px;color:var(--color-copper);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:28px}
   .hero-eye::before{content:"";width:44px;height:1px;background:var(--color-copper)}
-  .hero-headline{font-size:clamp(48px, 7vw, 88px);line-height:1;margin-bottom:32px}
+  .hero-headline{font-size:clamp(48px, 7vw, 88px);line-height:1.15;margin-bottom:32px}
   .hero-sub{font-size:17px;line-height:1.65;max-width:600px;margin-bottom:36px}
   .hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
   .hero-quote{max-width:320px;padding:28px 0 28px 28px;border-left:2px solid var(--color-copper);margin-bottom:100px}
@@ -148,14 +149,16 @@
 
   .hero-stats{
     position:absolute;z-index:2;
-    bottom:60px;left:64px;right:64px;
+    bottom:60px;left:50%;transform:translateX(-50%);
+    width:calc(100% - 128px);max-width:900px;
     background:rgba(37,19,9,.82);
     backdrop-filter:blur(8px);
     border:1px solid var(--color-hairline-dark);
     height:110px;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:0 48px;
+    display:flex;align-items:center;justify-content:space-around;
+    padding:0 40px;
   }
+  .hero-stats .stat{flex:0 0 auto;align-items:center;text-align:center}
   .stat{display:flex;flex-direction:column;gap:6px;flex:1}
   .stat-n{font-family:var(--f-serif);font-size:36px;font-weight:500;color:var(--color-copper)}
   .stat-l{font-size:12px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--color-text-on-dark-muted)}
@@ -185,7 +188,7 @@
   /* QUIZ */
   .quiz{background:var(--color-near-black)}
   .quiz-grid{display:grid;grid-template-columns:520px 1fr;gap:80px;align-items:stretch}
-  .quiz-headline{font-size:52px;line-height:1.05;margin:22px 0;color:var(--color-text-on-dark)}
+  .quiz-headline{font-size:52px;line-height:1.2;margin:22px 0;color:var(--color-text-on-dark)}
   .quiz-bullets{display:flex;flex-direction:column;gap:14px;padding-top:20px}
   .quiz-bullet{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--color-text-on-dark)}
   .quiz-bullet svg{width:18px;height:18px;color:var(--color-copper);flex-shrink:0}
@@ -229,7 +232,7 @@
   .procedure{background:var(--color-espresso)}
   .proc-hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:80px;margin-bottom:80px}
   .proc-hdr-l{max-width:760px}
-  .proc-head{font-size:clamp(36px,5vw,64px);line-height:1.05;color:var(--color-text-on-dark);margin-top:24px}
+  .proc-head{font-size:clamp(36px,5vw,64px);line-height:1.2;color:var(--color-text-on-dark);margin-top:24px}
   .proc-hdr-r{flex:1;padding-bottom:16px}
   .proc-hdr-r p{font-size:16px;line-height:1.7}
   .proc-steps{display:flex;flex-direction:column;border-top:1px solid var(--color-hairline-dark)}
@@ -239,8 +242,8 @@
   .proc-title{font-family:var(--f-serif);font-size:32px;color:var(--color-text-on-dark);margin-bottom:14px}
   .proc-desc{font-size:15px;line-height:1.7;max-width:680px}
   .proc-meta{width:180px;padding-top:16px;flex-shrink:0}
-  .proc-meta .t{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--color-copper);text-transform:uppercase;margin-bottom:6px}
-  .proc-meta .d{font-size:13px;color:var(--color-text-on-dark-muted)}
+  .proc-meta .t{font-size:22px;font-weight:700;letter-spacing:1px;color:var(--color-copper);text-transform:uppercase;margin-bottom:8px}
+  .proc-meta .d{font-size:14px;color:var(--color-text-on-dark-muted)}
   .proc-cta{display:inline-flex;margin-top:64px}
   @media(max-width:980px){
     .proc-hdr{flex-direction:column;gap:24px;align-items:flex-start}
@@ -253,7 +256,7 @@
   /* VIDEO */
   .video-sec{background:var(--color-near-black);text-align:center}
   .vid-hdr{max-width:920px;margin:0 auto 64px}
-  .vid-head{font-size:clamp(32px,4vw,52px);line-height:1.05;color:var(--color-text-on-dark);margin:20px 0}
+  .vid-head{font-size:clamp(32px,4vw,52px);line-height:1.2;color:var(--color-text-on-dark);margin:20px 0}
   .vid-sub{font-size:16px;line-height:1.6;margin:0 auto;max-width:620px}
   .vid-wrap{
     position:relative;max-width:1200px;margin:0 auto;
@@ -272,7 +275,7 @@
   .reviews{background:var(--color-espresso)}
   .rev-hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:80px;margin-bottom:56px}
   .rev-hdr-l{max-width:760px}
-  .rev-head{font-size:clamp(36px,5vw,64px);line-height:1.05;color:var(--color-text-on-dark);margin-top:22px}
+  .rev-head{font-size:clamp(36px,5vw,64px);line-height:1.2;color:var(--color-text-on-dark);margin-top:22px}
   .rev-hdr-r{max-width:420px}
   .rev-stars{display:flex;gap:4px;margin-bottom:14px}
   .rev-stars svg{width:22px;height:22px;color:var(--color-copper);fill:var(--color-copper)}
@@ -305,7 +308,7 @@
   /* BEFORE / AFTER */
   .ba{background:var(--color-near-black)}
   .ba-hdr{display:flex;justify-content:space-between;align-items:flex-end;gap:80px;margin-bottom:56px}
-  .ba-head{font-size:clamp(36px,4.5vw,58px);line-height:1.05;color:var(--color-text-on-dark);margin-top:22px}
+  .ba-head{font-size:clamp(36px,4.5vw,58px);line-height:1.2;color:var(--color-text-on-dark);margin-top:22px}
   .ba-feat{display:grid;grid-template-columns:1fr 1fr;gap:12px;height:520px;margin-bottom:16px}
   .ba-feat-img{position:relative;overflow:hidden;background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#0b0b0b;transition:transform var(--dur-med) var(--ease-out);cursor:zoom-in}
   .ba-feat-img:hover{transform:scale(1.01)}
@@ -357,9 +360,9 @@
   /* COMPARE */
   .compare{background:var(--color-copper);color:var(--color-near-black)}
   .cmp-hdr{margin-bottom:56px}
-  .cmp-head{font-size:clamp(36px,4.5vw,54px);line-height:1.05;margin-top:22px;color:var(--color-near-black);max-width:760px}
+  .cmp-head{font-size:clamp(36px,4.5vw,54px);line-height:1.2;margin-top:22px;color:var(--color-near-black);max-width:760px}
   .cmp-tbl{background:var(--color-near-black)}
-  .cmp-row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;padding:22px 28px;border-bottom:1px solid var(--color-hairline-dark);align-items:center}
+  .cmp-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;padding:22px 28px;border-bottom:1px solid var(--color-hairline-dark);align-items:center;gap:16px}
   .cmp-row.cmp-hdr-row{padding:24px 28px}
   .cmp-row .c{font-size:15px}
   .cmp-row.cmp-hdr-row .c{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
@@ -398,7 +401,7 @@
   }
   .doc-tag .el{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--color-copper);text-transform:uppercase;margin-bottom:6px}
   .doc-tag .nm{font-family:var(--f-serif);font-size:19px;line-height:1.35;color:var(--color-text-on-dark)}
-  .doc-head{font-size:clamp(36px,4.5vw,54px);line-height:1.05;color:var(--color-text-on-dark);margin:20px 0 0}
+  .doc-head{font-size:clamp(36px,4.5vw,54px);line-height:1.2;color:var(--color-text-on-dark);margin:20px 0 0}
   .doc-bio{font-size:16px;line-height:1.7;margin-top:20px}
   .doc-creds{display:flex;flex-direction:column;gap:16px;margin-top:28px}
   .doc-cred{padding:20px;border:1px solid var(--color-hairline-dark);display:flex;flex-direction:column;gap:10px;transition:border-color var(--dur-short) var(--ease-out)}
@@ -419,7 +422,7 @@
   /* FINANCING */
   .financing{background:var(--color-espresso)}
   .fin-top{display:flex;justify-content:space-between;align-items:flex-end;gap:80px;margin-bottom:56px}
-  .fin-head{font-size:clamp(32px,4vw,54px);line-height:1.05;color:var(--color-text-on-dark);margin-top:24px;max-width:700px}
+  .fin-head{font-size:clamp(32px,4vw,54px);line-height:1.2;color:var(--color-text-on-dark);margin-top:24px;max-width:700px}
   .fin-top-r{flex:1;padding-bottom:20px}
   .fin-top-r p{font-size:15px;line-height:1.7}
   .fin-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -431,6 +434,7 @@
   .fin-card.dark .lbl{color:var(--color-copper)}
   .fin-card.copper .lbl{color:var(--color-near-black)}
   .fin-card .price{font-family:var(--f-serif);font-size:54px;font-weight:500;line-height:1}
+  .fin-card .price .dsign{font-family:var(--f-sans);font-weight:500;font-size:.78em;vertical-align:.02em;margin-right:.04em}
   .fin-card.dark .price{color:var(--color-text-on-dark)}
   .fin-card.copper .price{color:var(--color-near-black)}
   .fin-card .desc{font-size:13px;line-height:1.6}
@@ -455,7 +459,9 @@
   /* FAQ */
   .faq{background:var(--color-near-black)}
   .faq-hdr{text-align:center;max-width:760px;margin:0 auto 64px}
-  .faq-head{font-size:clamp(36px,4vw,52px);line-height:1.05;color:var(--color-text-on-dark);margin-top:20px}
+  .faq-head{font-size:clamp(36px,4vw,52px);line-height:1.2;color:var(--color-text-on-dark);margin-top:20px}
+  .faq-hdr .eyebrow{font-size:28px;letter-spacing:4px}
+  @media(max-width:980px){.faq-hdr .eyebrow{font-size:22px;letter-spacing:3px}}
   .faq-list{max-width:980px;margin:0 auto;border-top:1px solid var(--color-hairline-dark)}
   .faq-item{border-bottom:1px solid var(--color-hairline-dark);padding:0}
   .faq-q{
@@ -478,7 +484,7 @@
   .contract{display:grid;grid-template-columns:1fr 1fr;padding:0;background:var(--color-copper)}
   .contract-l{background:var(--color-near-black);padding:140px 80px;display:flex;flex-direction:column;gap:28px}
   .contract-l .eyebrow{color:var(--color-copper)}
-  .contract-l h2{font-size:clamp(40px,5vw,64px);line-height:1;color:var(--color-text-on-dark)}
+  .contract-l h2{font-size:clamp(40px,5vw,64px);line-height:1.2;color:var(--color-text-on-dark)}
   .contract-l > p{font-size:16px;line-height:1.7;color:var(--color-text-on-dark-muted)}
   .cf-steps{display:flex;flex-direction:column;gap:18px;padding-top:24px}
   .cf-step{display:flex;gap:16px;align-items:flex-start}
@@ -544,7 +550,7 @@
     padding:40px;
     display:flex;flex-direction:column;gap:22px;
   }
-  .map-card h2{font-size:40px;line-height:1.05;color:var(--color-text-on-dark)}
+  .map-card h2{font-size:40px;line-height:1.2;color:var(--color-text-on-dark)}
   .map-card p{font-size:14px;line-height:1.6}
   .map-rows{display:flex;flex-direction:column;gap:14px;padding-top:16px;border-top:1px solid var(--color-hairline-dark)}
   .map-row{display:flex;align-items:flex-start;gap:12px}
@@ -646,7 +652,7 @@
     <a href="#visit">Visit</a>
   </div>
   <div class="nav-right">
-    <a href="#contract" class="nav-btn">Book Consult</a>
+    <a href="#consult" class="nav-btn">Book Consult</a>
   </div>
 </nav>
 
@@ -657,13 +663,13 @@
   </video>
   <div class="hero-body">
     <div class="hero-main reveal">
-      <div class="hero-eye">ARTAS iXi  ·  Robotic FUE</div>
+      <div class="hero-eye">ARTAS iXi  ·  Robotic FUE  ·  Algonquin, IL</div>
       <h1 class="hero-headline">
         <span class="mask-line"><span>Get Your Hair Back.</span></span>
       </h1>
-      <p class="hero-sub">ARTAS iXi is the only FDA cleared robot that selects, scores, and harvests follicles on its own. Dr. Vic Khanna then places every graft by hand. No linear scar. No shaved head. Just a permanent, natural hairline.</p>
+      <p class="hero-sub">ARTAS iXi is an FDA-cleared robotic platform that identifies, dissects, and harvests follicles autonomously — one of the most advanced robotic FUE systems available. Dr. Vic Khanna then places every graft by hand. No linear scar. No shaved head. Just a permanent, natural hairline.</p>
       <div class="hero-ctas">
-        <a href="#contract" class="btn btn-primary">Book a private consult <span class="arrow">→</span></a>
+        <a href="#consult" class="btn btn-primary">Book a private consult <span class="arrow">→</span></a>
       </div>
     </div>
     <aside class="reveal" style="max-width:320px">
@@ -689,7 +695,7 @@
   <div class="marquee-track">
     <div class="marquee-item"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg> 4.8 on 976 Google reviews</div>
     <div class="marquee-item">·</div>
-    <div class="marquee-item">Board-certified dermatologist</div>
+    <div class="marquee-item">Board-certified dermatologists</div>
     <div class="marquee-item">·</div>
     <div class="marquee-item">ARTAS iXi, FDA-cleared</div>
     <div class="marquee-item">·</div>
@@ -699,7 +705,7 @@
     <div class="marquee-item">·</div>
     <div class="marquee-item"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg> 4.8 on 976 Google reviews</div>
     <div class="marquee-item">·</div>
-    <div class="marquee-item">Board-certified dermatologist</div>
+    <div class="marquee-item">Board-certified dermatologists</div>
     <div class="marquee-item">·</div>
     <div class="marquee-item">ARTAS iXi, FDA-cleared</div>
     <div class="marquee-item">·</div>
@@ -719,7 +725,7 @@
         <span class="mask-line"><span>Find out if you are an</span></span>
         <span class="mask-line"><span>ARTAS candidate in 60 seconds.</span></span>
       </h2>
-      <p style="font-size:17px;line-height:1.7">Five short questions. No sign up required. You will receive a private, personalized assessment and a graft estimate within a few hours.</p>
+      <p style="font-size:17px;line-height:1.7">Five short questions. No sign-up required. You will receive a private, personalized assessment and a graft estimate within a few hours.</p>
       <div class="quiz-bullets">
         <div class="quiz-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Never shared with a third party</div>
         <div class="quiz-bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg> Reviewed personally by Dr. Khanna</div>
@@ -760,7 +766,7 @@
       </h2>
     </div>
     <div class="proc-hdr-r reveal">
-      <p>The ARTAS iXi performs the follicular harvest with a precision human hands cannot match. Dr. Khanna remains the artist, designing the hairline and placing every graft one at a time. The procedure is typically 4 to 8 hours in a private suite, with most patients back to work within a week.</p>
+      <p>The ARTAS iXi performs the follicular harvest with a precision human hands cannot match. Dr. Khanna remains the artist, designing the hairline and placing every graft one at a time. The procedure typically takes 6 to 9 hours in a single session, and most patients typically return to work and activities within a week.</p>
     </div>
   </div>
   <div class="proc-steps">
@@ -801,7 +807,7 @@
       <div class="proc-num">04</div>
       <div class="proc-main">
         <div class="proc-title">Recovery</div>
-        <p class="proc-desc">You rest for two days, wash carefully on day three, and return to meetings by day five. Grafts secure in ten to fourteen days. Full density is visible at twelve months.</p>
+        <p class="proc-desc">You typically rest for 2 days, wash carefully on day 3, and typically return to work and regular activities by day 5. Grafts secure in 10 to 14 days. Full density is visible at 12 months.</p>
       </div>
       <div class="proc-meta">
         <div class="t">5 to 7 days</div>
@@ -809,7 +815,7 @@
       </div>
     </div>
   </div>
-  <a href="#contract" class="btn btn-primary proc-cta">Reserve your procedure day <span class="arrow">→</span></a>
+  <a href="#consult" class="btn btn-primary proc-cta">Book your procedure <span class="arrow">→</span></a>
 </section>
 
 <!-- VIDEO -->
@@ -833,7 +839,7 @@
     </video>
   </div>
   <div class="vid-cta-row">
-    <a href="#contract" class="btn btn-ghost">Schedule your consultation <span class="arrow">→</span></a>
+    <a href="#consult" class="btn btn-ghost">Schedule your consultation <span class="arrow">→</span></a>
   </div>
 </section>
 
@@ -855,7 +861,7 @@
         <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg>
         <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" /></svg>
       </div>
-      <p class="rev-sub">Every review is pulled directly from our verified Google Business profile at Dermatology Specialists of Illinois. No filters, no curation, no incentives. Hair transplant is mentioned in 21 of our reviews.</p>
+      <p class="rev-sub">Every review is pulled directly from our verified Google Business profile at Dermatology Specialists of Illinois. No filters, no curation, no incentives.</p>
     </div>
   </div>
   <div class="rev-grid reveal-stagger">
@@ -937,7 +943,7 @@
     <div class="ba-grid-img" data-src="images/ba8.jpg" style="background-image:url('images/ba8.jpg')" role="button" tabindex="0" aria-label="Open patient result full size"></div>
   </div>
   <div class="ba-cta">
-    <a href="#contract" class="btn btn-outline-copper">Book your private consult <span class="arrow">→</span></a>
+    <a href="#consult" class="btn btn-outline-copper">Book your private consult <span class="arrow">→</span></a>
   </div>
 </section>
 
@@ -988,7 +994,7 @@
       <span class="c c4">Rarely</span>
     </div>
   </div>
-  <a href="#contract" class="btn cmp-cta">Compare on your consult <span class="arrow">→</span></a>
+  <a href="#consult" class="btn cmp-cta">Compare on your consult <span class="arrow">→</span></a>
 </section>
 
 <!-- DOCTORS -->
@@ -1004,7 +1010,7 @@
       <div class="eyebrow">The Team</div>
       <h2 class="doc-head">
         <span class="mask-line"><span>Dermatologists,</span></span>
-        <span class="mask-line"><span>not salesmen.</span></span>
+        <span class="mask-line"><span>not salespeople.</span></span>
       </h2>
       <p class="doc-bio">Dr. Vic Khanna and Dr. Lauren Boshnick lead the ARTAS robotic FUE program at DSI Hair. Dr. Khanna is a board-certified dermatologist and Clinical Instructor at Northwestern University with over a decade of experience on the iXi platform. Dr. Boshnick is a board-certified dermatologist who partners with Dr. Khanna on every case, evaluating candidacy, designing hairlines, and personally guiding patients from consultation through recovery.</p>
       <div class="doc-creds">
@@ -1042,17 +1048,17 @@
   <div class="fin-row reveal-stagger">
     <div class="fin-card dark">
       <span class="lbl">Per Graft</span>
-      <span class="price">$5 to $8</span>
+      <span class="price"><span class="dsign">$</span>5 to <span class="dsign">$</span>8</span>
       <span class="desc">Depending on session size and hairline complexity.</span>
     </div>
     <div class="fin-card copper">
       <span class="lbl">Typical Case</span>
-      <span class="price">$8k to $15k</span>
+      <span class="price"><span class="dsign">$</span>8k to <span class="dsign">$</span>15k</span>
       <span class="desc">Quoted in writing after your consult. No surprises.</span>
     </div>
     <div class="fin-card dark">
       <span class="lbl">Monthly From</span>
-      <span class="price">$199 / mo</span>
+      <span class="price"><span class="dsign">$</span>199 / mo</span>
       <span class="desc">0% APR available via CareCredit or Alphaeon.</span>
     </div>
   </div>
@@ -1063,7 +1069,7 @@
       <span class="ptn">Alphaeon</span>
       <span class="ptn">United Medical Credit</span>
     </div>
-    <a href="#contract" class="fin-bot-btn">Get your personal quote</a>
+    <a href="#consult" class="fin-bot-btn">Get your personal quote</a>
   </div>
 </section>
 
@@ -1091,7 +1097,7 @@
     </div>
     <div class="faq-item">
       <button class="faq-q">When will I see the results? <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg></button>
-      <div class="faq-a"><p>New hairs begin to emerge around month three. Visible density arrives by month six. The final, full result is visible at twelve months and continues to refine through month eighteen.</p></div>
+      <div class="faq-a"><p>New hairs begin to emerge around month 3. Visible density arrives by month 6. The final, full result is visible at 12 months and continues to refine through month 18.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Is ARTAS appropriate for women? <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg></button>
@@ -1101,22 +1107,26 @@
       <button class="faq-q">Do you guarantee the results? <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg></button>
       <div class="faq-a"><p>We back every graft. If any transplanted follicle does not grow, we replace it at no additional cost. This is rare with ARTAS, but we stand behind our work.</p></div>
     </div>
+    <div class="faq-item">
+      <button class="faq-q">What are the risks and possible side effects? <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg></button>
+      <div class="faq-a"><p>ARTAS robotic FUE is a well-established, minimally invasive procedure, but like any medical procedure it carries some risks. The most common side effects are temporary and mild: swelling, redness, scabbing, itching, and numbness in the donor or recipient area that typically resolves within a few weeks. Rare risks include infection, folliculitis, temporary shock loss of surrounding hair, uneven growth, or grafts that do not take. Dr. Khanna will review your full medical history and discuss every risk in detail during your private consultation before you decide to move forward.</p></div>
+    </div>
   </div>
 </section>
 
 <!-- CONTRACT / CONSULT -->
-<section class="contract" id="contract">
+<section class="contract" id="consult">
   <div class="contract-l reveal">
-    <div class="eyebrow">Reserve your consult</div>
+    <div class="eyebrow">Private consultation</div>
     <h2>
-      <span class="mask-line"><span>Book in private.</span></span>
-      <span class="mask-line"><span>Confidentially.</span></span>
+      <span class="mask-line"><span>Book your</span></span>
+      <span class="mask-line"><span>private consult.</span></span>
     </h2>
     <p>All consults are confidential. You will speak with Dr. Khanna directly. We offer evening and Saturday slots for working professionals.</p>
     <div class="cf-steps">
       <div class="cf-step"><span class="n">01</span><div class="c"><span class="t">Share your details</span><span class="d">A brief form. Nothing stored on third-party platforms.</span></div></div>
       <div class="cf-step"><span class="n">02</span><div class="c"><span class="t">Pick a time that works</span><span class="d">In-person in Algonquin, or secure video consult.</span></div></div>
-      <div class="cf-step"><span class="n">03</span><div class="c"><span class="t">Meet Dr. Khanna</span><span class="d">Forty-five unhurried minutes. A written plan and estimate.</span></div></div>
+      <div class="cf-step"><span class="n">03</span><div class="c"><span class="t">Meet Dr. Khanna</span><span class="d">45 minutes. A written plan and estimate.</span></div></div>
     </div>
   </div>
   <div class="contract-r reveal">
@@ -1142,7 +1152,8 @@
       </div>
       <div class="cf-field" style="margin-bottom:20px">
         <label class="cf-label">Timing</label>
-        <select class="cf-select">
+        <select class="cf-select" required>
+          <option value="" disabled selected>Select timing</option>
           <option>Within a month</option>
           <option>1 to 3 months</option>
           <option>3 to 6 months</option>
@@ -1168,7 +1179,8 @@
     <div class="map-card reveal">
       <div class="eyebrow">Visit DSI Hair</div>
       <h2>Algonquin, Illinois</h2>
-      <p>A private, dermatologist led practice in Chicagoland. Free on site parking, discreet scheduling.</p>
+      <p>A private, dermatologist-led practice in Chicagoland. Free on site parking, discreet scheduling.</p>
+      <p style="font-size:13px;color:var(--color-copper);line-height:1.5"><strong>Please note:</strong> consultations are available at all Dermatology Specialists of Illinois locations. All ARTAS iXi hair transplant procedures are performed at our Algonquin location.</p>
       <div class="map-rows">
         <div class="map-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1176,7 +1188,7 @@
         </div>
         <div class="map-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>(844) 307-7546</span>
+          <span><a href="tel:+18443077546" style="color:inherit;text-decoration:none">(844) 307-7546</a></span>
         </div>
         <div class="map-row">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -1208,7 +1220,7 @@
   <div class="ft-top">
     <div class="ft-brand">
       <img class="ft-brand-logo" src="images/logo.png" alt="DSI Hair" />
-      <p>A dermatologist led practice in Algonquin, Illinois. Specializing in ARTAS robotic FUE hair restoration.</p>
+      <p>A dermatologist-led practice in Algonquin, Illinois. Specializing in ARTAS robotic FUE hair restoration.</p>
       <div class="ft-soc">
         <a href="https://www.instagram.com/dermspecialistsil" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
         <a href="https://www.facebook.com/dermspecialistsil" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
@@ -1222,8 +1234,8 @@
     </div>
     <div class="ft-col">
       <div class="lbl">Contact</div>
-      <div class="l1">(844) 307-7546</div>
-      <div class="l2">hello@dsihair.com</div>
+      <div class="l1"><a href="tel:+18443077546">(844) 307-7546</a></div>
+      <div class="l2"><a href="mailto:hello@dsihair.com">hello@dsihair.com</a></div>
     </div>
     <div class="ft-col">
       <div class="lbl">Hours</div>
@@ -1360,7 +1372,7 @@
   qzNext.addEventListener('click', () => {
     if (qzIdx < qzQuestions.length - 1) { qzIdx++; renderQuiz(); }
     else {
-      qzOpts.innerHTML = '<div style="grid-column:1/-1;padding:32px 24px;text-align:center;border:1px solid var(--color-copper);background:rgba(194,131,70,.08)"><div class="eyebrow" style="margin-bottom:12px">Preliminary result</div><h4 style="font-family:var(--f-serif);font-size:28px;font-weight:500;color:var(--color-text-on-dark);line-height:1.3">You look like a good ARTAS candidate.</h4><p style="font-size:14px;color:var(--color-text-on-dark-muted);margin-top:12px">Dr. Khanna will review your answers personally and send a detailed assessment within a few hours.</p><a href="#contract" class="btn btn-primary" style="margin-top:18px">Finish my consult request <span class="arrow">→</span></a></div>';
+      qzOpts.innerHTML = '<div style="grid-column:1/-1;padding:32px 24px;text-align:center;border:1px solid var(--color-copper);background:rgba(194,131,70,.08)"><div class="eyebrow" style="margin-bottom:12px">Preliminary result</div><h4 style="font-family:var(--f-serif);font-size:28px;font-weight:500;color:var(--color-text-on-dark);line-height:1.3">You look like a good ARTAS candidate.</h4><p style="font-size:14px;color:var(--color-text-on-dark-muted);margin-top:12px">Dr. Khanna will review your answers personally and send a detailed assessment within a few hours.</p><a href="#consult" class="btn btn-primary" style="margin-top:18px">Finish my consult request <span class="arrow">→</span></a></div>';
       qzQ.textContent = 'We have enough to say hello.';
       qzNext.style.display = 'none';
     }
