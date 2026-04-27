@@ -213,8 +213,11 @@
     padding:24px;
     display:flex;flex-direction:column;gap:12px;
     cursor:pointer;
+    min-height:220px;
     transition:border-color var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out);
   }
+  .qz-opt .nw-icon{width:72px;height:72px;margin-top:auto;align-self:center;display:block;opacity:.85;transition:opacity var(--dur-short) var(--ease-out)}
+  .qz-opt:hover .nw-icon, .qz-opt.active .nw-icon{opacity:1}
   .qz-opt:hover{border-color:var(--color-copper);transform:translateY(-2px)}
   .qz-opt.active{border-color:var(--color-copper);border-width:1.5px}
   .qz-opt .nw{font-family:var(--f-serif);font-size:26px;color:var(--color-text-on-dark)}
@@ -743,10 +746,10 @@
       </div>
       <h3 class="qz-q" id="qz-q">Which Norwood pattern best matches your hairline today?</h3>
       <div class="qz-opts" id="qz-opts">
-        <button class="qz-opt active" data-opt="NW II"><span class="nw">NW II</span><span class="sub">Slight temple recession</span></button>
-        <button class="qz-opt" data-opt="NW III"><span class="nw">NW III</span><span class="sub">Deep M shaped recession</span></button>
-        <button class="qz-opt" data-opt="NW IV"><span class="nw">NW IV</span><span class="sub">Recession plus crown thinning</span></button>
-        <button class="qz-opt" data-opt="NW V+"><span class="nw">NW V+</span><span class="sub">Large loss, bridge area thin</span></button>
+        <button class="qz-opt active" data-opt="NW II"><span class="nw">NW II</span><span class="sub">Slight temple recession</span><img class="nw-icon" src="images/nw2.svg" alt="" /></button>
+        <button class="qz-opt" data-opt="NW III"><span class="nw">NW III</span><span class="sub">Deep M shaped recession</span><img class="nw-icon" src="images/nw3.svg" alt="" /></button>
+        <button class="qz-opt" data-opt="NW IV"><span class="nw">NW IV</span><span class="sub">Recession plus crown thinning</span><img class="nw-icon" src="images/nw4.svg" alt="" /></button>
+        <button class="qz-opt" data-opt="NW V+"><span class="nw">NW V+</span><span class="sub">Large loss, bridge area thin</span><img class="nw-icon" src="images/nw6.svg" alt="" /></button>
       </div>
       <div class="qz-foot">
         <button class="qz-back" id="qz-back"><span>←</span> Back</button>
@@ -1307,10 +1310,10 @@
   const qzQuestions = [
     { q: 'Which Norwood pattern best matches your hairline today?',
       opts: [
-        { label: 'NW II', sub: 'Slight temple recession' },
-        { label: 'NW III', sub: 'Deep M shaped recession' },
-        { label: 'NW IV', sub: 'Recession plus crown thinning' },
-        { label: 'NW V+', sub: 'Large loss, bridge area thin' },
+        { label: 'NW II', sub: 'Slight temple recession', icon: 'images/nw2.svg' },
+        { label: 'NW III', sub: 'Deep M shaped recession', icon: 'images/nw3.svg' },
+        { label: 'NW IV', sub: 'Recession plus crown thinning', icon: 'images/nw4.svg' },
+        { label: 'NW V+', sub: 'Large loss, bridge area thin', icon: 'images/nw6.svg' },
       ]},
     { q: 'How long has the thinning been progressing?',
       opts: [
@@ -1357,7 +1360,7 @@
     qzProg.querySelectorAll('span').forEach((s, i) => s.classList.toggle('on', i <= qzIdx));
     qzOpts.innerHTML = cur.opts.map((o, i) =>
       `<button class="qz-opt${qzAnswers[qzIdx] === i ? ' active' : ''}" data-i="${i}">
-        <span class="nw">${o.label}</span><span class="sub">${o.sub}</span>
+        <span class="nw">${o.label}</span><span class="sub">${o.sub}</span>${o.icon ? `<img class="nw-icon" src="${o.icon}" alt="" />` : ''}
       </button>`).join('');
     qzOpts.querySelectorAll('.qz-opt').forEach(b => {
       b.addEventListener('click', () => {
