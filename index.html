@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJVRJNBF');</script>
+<!-- End Google Tag Manager -->
 <title>DSI Hair — ARTAS iXi Robotic FUE in Algonquin, Illinois</title>
 <meta name="description" content="Dermatologist-led ARTAS iXi robotic FUE at Dermatology Specialists of Illinois. Private consults with Dr. Vic Khanna in Algonquin, IL. 4.8/5 across 976 verified Google reviews." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -643,6 +650,10 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJVRJNBF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- NAV -->
 <nav class="nav" id="nav">
@@ -1136,28 +1147,28 @@
   </div>
   <div class="contract-r reveal">
     <h3>Your consult request</h3>
-    <form id="consult-form">
+    <form id="consult-form" class="staff-benefit-form">
       <div class="cf-row" style="margin-bottom:20px">
         <div class="cf-field">
-          <label class="cf-label">First name</label>
-          <input class="cf-input" type="text" placeholder="Your first name" required />
+          <label class="cf-label" for="first_name">First name*</label>
+          <input id="first_name" name="first_name" class="cf-input" type="text" placeholder="Your first name" required />
         </div>
         <div class="cf-field">
-          <label class="cf-label">Last name</label>
-          <input class="cf-input" type="text" placeholder="Your last name" required />
+          <label class="cf-label" for="last_name">Last name*</label>
+          <input id="last_name" name="last_name" class="cf-input" type="text" placeholder="Your last name" required />
         </div>
       </div>
       <div class="cf-field" style="margin-bottom:20px">
-        <label class="cf-label">Email</label>
-        <input class="cf-input" type="email" placeholder="name@email.com" required />
+        <label class="cf-label" for="email">Email*</label>
+        <input id="email" name="email" class="cf-input" type="email" placeholder="name@email.com" required />
       </div>
       <div class="cf-field" style="margin-bottom:20px">
-        <label class="cf-label">Phone</label>
-        <input class="cf-input" type="tel" placeholder="(###) ### ####" required />
+        <label class="cf-label" for="phone">Phone*</label>
+        <input id="phone" name="phone" class="cf-input" type="tel" placeholder="XXXXXXXXXX" required />
       </div>
       <div class="cf-field" style="margin-bottom:20px">
-        <label class="cf-label">Timing</label>
-        <select class="cf-select" required>
+        <label class="cf-label" for="timing">Timing</label>
+        <select id="timing" name="timing" class="cf-select" required>
           <option value="" disabled selected>Select timing</option>
           <option>Within a month</option>
           <option>1 to 3 months</option>
@@ -1166,14 +1177,15 @@
         </select>
       </div>
       <div class="cf-field" style="margin-bottom:20px">
-        <label class="cf-label">Notes for Dr. Khanna</label>
-        <textarea class="cf-textarea" placeholder="Anything we should know before we meet."></textarea>
+        <label class="cf-label" for="notes">Notes for Dr. Khanna</label>
+        <textarea id="notes" name="notes" class="cf-textarea" placeholder="Anything we should know before we meet."></textarea>
       </div>
       <div class="cf-agree">
-        <input type="checkbox" id="agree" required />
-        <label for="agree">I agree to the privacy and HIPAA terms. I understand no sales call will be made.</label>
+        <input type="checkbox" id="newsletter" name="newsletter" required />
+        <label for="newsletter">I agree to the privacy and HIPAA terms. I understand no sales call will be made.</label>
       </div>
-      <button type="submit" class="cf-btn" style="margin-top:8px;width:100%">Request my consult →</button>
+      <div id="form-error" class="cf-error" role="alert" aria-live="polite" style="display:none;color:#c0392b;font-size:14px;margin-top:12px"></div>
+      <button type="submit" class="cf-btn submit-btn" style="margin-top:8px;width:100%">Request my consult →</button>
     </form>
   </div>
 </section>
@@ -1422,13 +1434,109 @@
 
   // --- Video section uses native HTML5 <video> element; no JS trigger needed.
 
-  // --- Form feedback
-  document.getElementById('consult-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = e.target.querySelector('.cf-btn');
-    btn.textContent = '✓ Request received. Dr. Khanna will be in touch.';
-    btn.style.pointerEvents = 'none';
-  });
+  // --- Form submission to AEVA Digital API
+  (function () {
+    const form = document.getElementById('consult-form');
+    if (!form) return;
+    const submitBtn = form.querySelector('.submit-btn');
+    const errEl = form.querySelector('#form-error');
+
+    function showError(msg) {
+      if (!errEl) return;
+      errEl.textContent = msg;
+      errEl.style.display = msg ? 'block' : 'none';
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      showError('');
+      submitBtn.disabled = true;
+
+      const first_name = form.querySelector('#first_name').value?.trim() || '';
+      const last_name = form.querySelector('#last_name').value?.trim() || '';
+      const email = form.querySelector('#email').value?.trim() || '';
+      const phone = form.querySelector('#phone').value?.trim() || '';
+      const timing = form.querySelector('#timing').value?.trim() || '';
+      const notes = form.querySelector('#notes').value?.trim() || '';
+      const checkbox = form.querySelector('#newsletter')?.checked ? 'on' : '';
+
+      const emailRe = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
+      if (!emailRe.test(email)) {
+        showError('Please enter a valid email address.');
+        submitBtn.disabled = false;
+        return;
+      }
+
+      const phoneRe = /^[0-9]{10}$/;
+      if (!phoneRe.test(phone)) {
+        showError('Please enter a 10-digit US phone number.');
+        submitBtn.disabled = false;
+        return;
+      }
+
+      const messageParts = [];
+      if (timing) messageParts.push(`Timing: ${timing}`);
+      if (notes) messageParts.push(`Notes: ${notes}`);
+      const message = messageParts.join('\n');
+
+      const fd = new FormData();
+      fd.append('first_name', first_name);
+      fd.append('last_name', last_name);
+      fd.append('phone', `+1${phone}`);
+      fd.append('email', email);
+      fd.append('checkbox', checkbox);
+      fd.append('organization', '26e02076-6d59-4822-9e26-d50b4d600ca2');
+      fd.append('form', '165');
+      fd.append('message', message);
+      fd.append('form_location', window.location.href);
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const trackingMap = {
+        gclid: 'google',
+        wbraid: 'google',
+        gbraid: 'google',
+        fbclid: 'meta',
+        ttclid: 'tiktok',
+      };
+      let trackingParam = '';
+      let adSource = 'other';
+      for (const [param, source] of Object.entries(trackingMap)) {
+        const val = urlParams.get(param);
+        if (val) {
+          trackingParam = val;
+          adSource = source;
+          break;
+        }
+      }
+      fd.append('tracking_param', trackingParam);
+      fd.append('ad_source', adSource);
+
+      try {
+        const res = await fetch(
+          'https://api.aevadigital.com/api/v1/contacts/add_contact_from_form/',
+          { method: 'POST', body: fd }
+        );
+
+        if (!res.ok) {
+          const txt = await res.text().catch(() => res.statusText);
+          throw new Error(txt || 'Server error');
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ 'event': 'form-success' });
+
+        form.style.display = 'none';
+        const thankYou = document.createElement('div');
+        thankYou.className = 'form-success-message';
+        thankYou.innerHTML = '<h3>Thank You!</h3><p>Your consultation request has been received. We\'ll be in touch shortly.</p>';
+        form.parentNode.insertBefore(thankYou, form.nextSibling);
+      } catch (err) {
+        console.error(err);
+        showError('Submission failed — please try again.');
+        submitBtn.disabled = false;
+      }
+    });
+  })();
 
   // --- Smooth anchor scroll with header offset (fallback if smooth-scroll not supported)
   document.querySelectorAll('a[href^="#"]').forEach(a => {
