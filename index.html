@@ -1164,25 +1164,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="cf-field" style="margin-bottom:20px">
         <label class="cf-label" for="phone">Phone*</label>
-        <input id="phone" name="phone" class="cf-input" type="tel" placeholder="XXXXXXXXXX" required />
-      </div>
-      <div class="cf-field" style="margin-bottom:20px">
-        <label class="cf-label" for="timing">Timing</label>
-        <select id="timing" name="timing" class="cf-select" required>
-          <option value="" disabled selected>Select timing</option>
-          <option>Within a month</option>
-          <option>1 to 3 months</option>
-          <option>3 to 6 months</option>
-          <option>Just researching</option>
-        </select>
+        <input id="phone" name="phone" class="cf-input" type="tel" placeholder="Phone" required />
       </div>
       <div class="cf-field" style="margin-bottom:20px">
         <label class="cf-label" for="notes">Notes for Dr. Khanna</label>
         <textarea id="notes" name="notes" class="cf-textarea" placeholder="Anything we should know before we meet."></textarea>
       </div>
+      <div class="cf-agree" style="margin-bottom:14px">
+        <input type="checkbox" id="marketing_consent" name="marketing_consent" />
+        <label for="marketing_consent">By checking this box, you consent to receive marketing/promotional text messages from DSI Hair, including offers, specials, and promotional updates. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. View our Privacy Policy and Terms &amp; Conditions.</label>
+      </div>
       <div class="cf-agree">
-        <input type="checkbox" id="newsletter" name="newsletter" required />
-        <label for="newsletter">I agree to the privacy and HIPAA terms. I understand no sales call will be made.</label>
+        <input type="checkbox" id="informational_consent" name="informational_consent" />
+        <label for="informational_consent">By checking this box, you consent to receive informational/transactional text messages from DSI Hair. Message frequency varies. Message &amp; data rates may apply. You can reply STOP to unsubscribe at any time Reply HELP for help. View our Privacy Policy and Terms &amp; Conditions.</label>
       </div>
       <div id="form-error" class="cf-error" role="alert" aria-live="polite" style="display:none;color:#c0392b;font-size:14px;margin-top:12px"></div>
       <button type="submit" class="cf-btn submit-btn" style="margin-top:8px;width:100%">Request my consult →</button>
@@ -1456,9 +1450,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const last_name = form.querySelector('#last_name').value?.trim() || '';
       const email = form.querySelector('#email').value?.trim() || '';
       const phone = form.querySelector('#phone').value?.trim() || '';
-      const timing = form.querySelector('#timing').value?.trim() || '';
       const notes = form.querySelector('#notes').value?.trim() || '';
-      const checkbox = form.querySelector('#newsletter')?.checked ? 'on' : '';
+      const marketingConsent = form.querySelector('#marketing_consent')?.checked ? 'on' : '';
+      const informationalConsent = form.querySelector('#informational_consent')?.checked ? 'on' : '';
 
       const emailRe = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
       if (!emailRe.test(email)) {
@@ -1474,20 +1468,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         return;
       }
 
-      const messageParts = [];
-      if (timing) messageParts.push(`Timing: ${timing}`);
-      if (notes) messageParts.push(`Notes: ${notes}`);
-      const message = messageParts.join('\n');
-
       const fd = new FormData();
       fd.append('first_name', first_name);
       fd.append('last_name', last_name);
       fd.append('phone', `+1${phone}`);
       fd.append('email', email);
-      fd.append('checkbox', checkbox);
+      fd.append('checkbox', marketingConsent);
+      fd.append('marketing_consent', marketingConsent);
+      fd.append('informational_consent', informationalConsent);
       fd.append('organization', '26e02076-6d59-4822-9e26-d50b4d600ca2');
       fd.append('form', '165');
-      fd.append('message', message);
+      fd.append('message', notes);
       fd.append('form_location', window.location.href);
 
       const urlParams = new URLSearchParams(window.location.search);
